@@ -1,0 +1,5 @@
+./node_modules/*
+bitcore-lib-fantasygold.js
+bitcore-lib-fantasygold.min.js
+./test/*
+./dist/*
