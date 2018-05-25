@@ -2,7 +2,7 @@ require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof requ
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('./util/preconditions');
 var errors = require('./errors');
 var Base58Check = require('./encoding/base58check');
@@ -500,11 +500,11 @@ module.exports = Address;
 var Script = require('./script');
 
 }).call(this,require("buffer").Buffer)
-},{"./crypto/hash":8,"./encoding/base58check":13,"./errors":17,"./networks":25,"./publickey":28,"./script":29,"./util/js":47,"./util/preconditions":48,"buffer":118,"lofantasygold":192}],2:[function(require,module,exports){
+},{"./crypto/hash":8,"./encoding/base58check":13,"./errors":17,"./networks":25,"./publickey":28,"./script":29,"./util/js":47,"./util/preconditions":48,"buffer":118,"lodash":192}],2:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var BlockHeader = require('./blockheader');
 var BN = require('../crypto/bn');
 var BufferUtil = require('../util/buffer');
@@ -785,11 +785,11 @@ Block.Values = {
 module.exports = Block;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/bn":6,"../crypto/hash":8,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../transaction":32,"../util/buffer":46,"../util/preconditions":48,"./blockheader":3,"buffer":118,"lofantasygold":192}],3:[function(require,module,exports){
+},{"../crypto/bn":6,"../crypto/hash":8,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../transaction":32,"../util/buffer":46,"../util/preconditions":48,"./blockheader":3,"buffer":118,"lodash":192}],3:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var BN = require('../crypto/bn');
 var BufferUtil = require('../util/buffer');
 var BufferReader = require('../encoding/bufferreader');
@@ -1086,7 +1086,7 @@ BlockHeader.Constants = {
 module.exports = BlockHeader;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/bn":6,"../crypto/hash":8,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":118,"lofantasygold":192}],4:[function(require,module,exports){
+},{"../crypto/bn":6,"../crypto/hash":8,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":118,"lodash":192}],4:[function(require,module,exports){
 module.exports = require('./block');
 
 module.exports.BlockHeader = require('./blockheader');
@@ -1096,7 +1096,7 @@ module.exports.MerkleBlock = require('./merkleblock');
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var BlockHeader = require('./blockheader');
 var BufferUtil = require('../util/buffer');
 var BufferReader = require('../encoding/bufferreader');
@@ -1368,13 +1368,13 @@ MerkleBlock.fromObject = function fromObject(obj) {
 module.exports = MerkleBlock;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/hash":8,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../transaction":32,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./blockheader":3,"buffer":118,"lofantasygold":192}],6:[function(require,module,exports){
+},{"../crypto/hash":8,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../transaction":32,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./blockheader":3,"buffer":118,"lodash":192}],6:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
 var BN = require('bn.js');
 var $ = require('../util/preconditions');
-var _ = require('lofantasygold');
+var _ = require('lodash');
 
 var reversebuf = function(buf) {
   var buf2 = new Buffer(buf.length);
@@ -1574,7 +1574,7 @@ BN.pad = function(buf, natlen, size) {
 module.exports = BN;
 
 }).call(this,require("buffer").Buffer)
-},{"../util/preconditions":48,"bn.js":67,"buffer":118,"lofantasygold":192}],7:[function(require,module,exports){
+},{"../util/preconditions":48,"bn.js":67,"buffer":118,"lodash":192}],7:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -1585,7 +1585,7 @@ var PublicKey = require('../publickey');
 var Random = require('./random');
 var Hash = require('./hash');
 var BufferUtil = require('../util/buffer');
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 
 var ECDSA = function ECDSA(obj) {
@@ -1874,7 +1874,7 @@ ECDSA.verify = function(hashbuf, sig, pubkey, endian) {
 module.exports = ECDSA;
 
 }).call(this,require("buffer").Buffer)
-},{"../publickey":28,"../util/buffer":46,"../util/preconditions":48,"./bn":6,"./hash":8,"./point":9,"./random":10,"./signature":11,"buffer":118,"lofantasygold":192}],8:[function(require,module,exports){
+},{"../publickey":28,"../util/buffer":46,"../util/preconditions":48,"./bn":6,"./hash":8,"./point":9,"./random":10,"./signature":11,"buffer":118,"lodash":192}],8:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -2185,7 +2185,7 @@ module.exports = Random;
 'use strict';
 
 var BN = require('./bn');
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var BufferUtil = require('../util/buffer');
 var JSUtil = require('../util/js');
@@ -2496,11 +2496,11 @@ Signature.SIGHASH_ANYONECANPAY = 0x80;
 module.exports = Signature;
 
 }).call(this,require("buffer").Buffer)
-},{"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./bn":6,"buffer":118,"lofantasygold":192}],12:[function(require,module,exports){
+},{"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./bn":6,"buffer":118,"lodash":192}],12:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var bs58 = require('bs58');
 var buffer = require('buffer');
 
@@ -2570,11 +2570,11 @@ Base58.prototype.toString = function() {
 module.exports = Base58;
 
 }).call(this,require("buffer").Buffer)
-},{"bs58":115,"buffer":118,"lofantasygold":192}],13:[function(require,module,exports){
+},{"bs58":115,"buffer":118,"lodash":192}],13:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var Base58 = require('./base58');
 var buffer = require('buffer');
 var sha256sha256 = require('../crypto/hash').sha256sha256;
@@ -2669,11 +2669,11 @@ Base58Check.prototype.toString = function() {
 module.exports = Base58Check;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/hash":8,"./base58":12,"buffer":118,"lofantasygold":192}],14:[function(require,module,exports){
+},{"../crypto/hash":8,"./base58":12,"buffer":118,"lodash":192}],14:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var BufferUtil = require('../util/buffer');
 var BN = require('../crypto/bn');
@@ -2871,7 +2871,7 @@ BufferReader.prototype.readReverse = function(len) {
 module.exports = BufferReader;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/bn":6,"../util/buffer":46,"../util/preconditions":48,"buffer":118,"lofantasygold":192}],15:[function(require,module,exports){
+},{"../crypto/bn":6,"../util/buffer":46,"../util/preconditions":48,"buffer":118,"lodash":192}],15:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -3105,7 +3105,7 @@ module.exports = Varint;
 },{"../crypto/bn":6,"./bufferreader":14,"./bufferwriter":15,"buffer":118}],17:[function(require,module,exports){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 
 function format(message, args) {
   return message
@@ -3165,7 +3165,7 @@ module.exports.extend = function(spec) {
   return traverseNode(bitcore.Error, spec);
 };
 
-},{"./spec":18,"lofantasygold":192}],18:[function(require,module,exports){
+},{"./spec":18,"lodash":192}],18:[function(require,module,exports){
 'use strict';
 
 var docsURL = 'http://bitcore.io/';
@@ -3379,7 +3379,7 @@ module.exports = [{
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var buffer = require('buffer');
 var compare = Buffer.compare || require('buffer-compare');
@@ -3585,7 +3585,7 @@ GovObject.shallowCopy = function(govObject) {
 module.exports = GovObject;
 
 }).call(this,require("buffer").Buffer)
-},{"../address":1,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../errors":17,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":118,"buffer-compare":116,"lofantasygold":192}],20:[function(require,module,exports){
+},{"../address":1,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../errors":17,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":118,"buffer-compare":116,"lodash":192}],20:[function(require,module,exports){
 module.exports = require('./govobject');
 
 module.exports.Proposal = require('./types/proposal');
@@ -3593,7 +3593,7 @@ module.exports.Proposal = require('./types/proposal');
 },{"./govobject":19,"./types/proposal":21}],21:[function(require,module,exports){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('../../util/preconditions');
 var GovObject = require('../govobject');
 var errors = require('../../errors');
@@ -3761,14 +3761,14 @@ Proposal.prototype.getSerializationError = function(opts) {
 
 module.exports = Proposal;
 
-},{"../../errors":17,"../../util/preconditions":48,"../govobject":19,"lofantasygold":192,"util":260}],22:[function(require,module,exports){
+},{"../../errors":17,"../../util/preconditions":48,"../govobject":19,"lodash":192,"util":260}],22:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
 
 var assert = require('assert');
 var buffer = require('buffer');
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('./util/preconditions');
 
 var BN = require('./crypto/bn');
@@ -4411,11 +4411,11 @@ assert(HDPrivateKey.ChecksumEnd === HDPrivateKey.SerializedByteSize);
 module.exports = HDPrivateKey;
 
 }).call(this,require("buffer").Buffer)
-},{"./crypto/bn":6,"./crypto/hash":8,"./crypto/point":9,"./crypto/random":10,"./encoding/base58":12,"./encoding/base58check":13,"./errors":17,"./hdpublickey":23,"./networks":25,"./privatekey":27,"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"assert":64,"buffer":118,"lofantasygold":192}],23:[function(require,module,exports){
+},{"./crypto/bn":6,"./crypto/hash":8,"./crypto/point":9,"./crypto/random":10,"./encoding/base58":12,"./encoding/base58check":13,"./errors":17,"./hdpublickey":23,"./networks":25,"./privatekey":27,"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"assert":64,"buffer":118,"lodash":192}],23:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('./util/preconditions');
 
 var BN = require('./crypto/bn');
@@ -4911,11 +4911,11 @@ assert(HDPublicKey.ChecksumEnd === HDPublicKey.SerializedByteSize);
 module.exports = HDPublicKey;
 
 }).call(this,require("buffer").Buffer)
-},{"./crypto/bn":6,"./crypto/hash":8,"./crypto/point":9,"./encoding/base58":12,"./encoding/base58check":13,"./errors":17,"./hdprivatekey":22,"./networks":25,"./publickey":28,"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"assert":64,"buffer":118,"lofantasygold":192}],24:[function(require,module,exports){
+},{"./crypto/bn":6,"./crypto/hash":8,"./crypto/point":9,"./encoding/base58":12,"./encoding/base58check":13,"./errors":17,"./hdprivatekey":22,"./networks":25,"./publickey":28,"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"assert":64,"buffer":118,"lodash":192}],24:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var PrivateKey = require('./privatekey');
 var PublicKey = require('./publickey');
 var Address = require('./address');
@@ -5083,9 +5083,9 @@ Message.prototype.inspect = function() {
 module.exports = Message;
 
 }).call(this,require("buffer").Buffer)
-},{"./address":1,"./crypto/ecdsa":7,"./crypto/hash":8,"./crypto/signature":11,"./encoding/bufferwriter":15,"./privatekey":27,"./publickey":28,"./util/js":47,"./util/preconditions":48,"buffer":118,"lofantasygold":192}],25:[function(require,module,exports){
+},{"./address":1,"./crypto/ecdsa":7,"./crypto/hash":8,"./crypto/signature":11,"./encoding/bufferwriter":15,"./privatekey":27,"./publickey":28,"./util/js":47,"./util/preconditions":48,"buffer":118,"lodash":192}],25:[function(require,module,exports){
 'use strict';
-var _ = require('lofantasygold');
+var _ = require('lodash');
 
 var BufferUtil = require('./util/buffer');
 var JSUtil = require('./util/js');
@@ -5351,11 +5351,11 @@ module.exports = {
   disableRegtest: disableRegtest
 };
 
-},{"./util/buffer":46,"./util/js":47,"lofantasygold":192}],26:[function(require,module,exports){
+},{"./util/buffer":46,"./util/js":47,"lodash":192}],26:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('./util/preconditions');
 var BufferUtil = require('./util/buffer');
 var JSUtil = require('./util/js');
@@ -5603,11 +5603,11 @@ Opcode.prototype.inspect = function() {
 module.exports = Opcode;
 
 }).call(this,require("buffer").Buffer)
-},{"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"buffer":118,"lofantasygold":192}],27:[function(require,module,exports){
+},{"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"buffer":118,"lodash":192}],27:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var Address = require('./address');
 var Base58Check = require('./encoding/base58check');
 var BN = require('./crypto/bn');
@@ -6007,7 +6007,7 @@ PrivateKey.prototype.inspect = function() {
 module.exports = PrivateKey;
 
 }).call(this,require("buffer").Buffer)
-},{"./address":1,"./crypto/bn":6,"./crypto/point":9,"./crypto/random":10,"./encoding/base58check":13,"./networks":25,"./publickey":28,"./util/js":47,"./util/preconditions":48,"buffer":118,"lofantasygold":192}],28:[function(require,module,exports){
+},{"./address":1,"./crypto/bn":6,"./crypto/point":9,"./crypto/random":10,"./encoding/base58check":13,"./networks":25,"./publickey":28,"./util/js":47,"./util/preconditions":48,"buffer":118,"lodash":192}],28:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -6016,7 +6016,7 @@ var Point = require('./crypto/point');
 var Hash = require('./crypto/hash');
 var JSUtil = require('./util/js');
 var Network = require('./networks');
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('./util/preconditions');
 
 /**
@@ -6404,7 +6404,7 @@ PublicKey.prototype.inspect = function() {
 module.exports = PublicKey;
 
 }).call(this,require("buffer").Buffer)
-},{"./address":1,"./crypto/bn":6,"./crypto/hash":8,"./crypto/point":9,"./networks":25,"./privatekey":27,"./util/js":47,"./util/preconditions":48,"buffer":118,"lofantasygold":192}],29:[function(require,module,exports){
+},{"./address":1,"./crypto/bn":6,"./crypto/hash":8,"./crypto/point":9,"./networks":25,"./privatekey":27,"./util/js":47,"./util/preconditions":48,"buffer":118,"lodash":192}],29:[function(require,module,exports){
 module.exports = require('./script');
 
 module.exports.Interpreter = require('./interpreter');
@@ -6413,7 +6413,7 @@ module.exports.Interpreter = require('./interpreter');
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 
 var Script = require('./script');
 var Opcode = require('../opcode');
@@ -7678,7 +7678,7 @@ Interpreter.prototype.step = function() {
 
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/bn":6,"../crypto/hash":8,"../crypto/signature":11,"../opcode":26,"../publickey":28,"../transaction":32,"./script":31,"buffer":118,"lofantasygold":192}],31:[function(require,module,exports){
+},{"../crypto/bn":6,"../crypto/hash":8,"../crypto/signature":11,"../opcode":26,"../publickey":28,"../transaction":32,"./script":31,"buffer":118,"lodash":192}],31:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -7691,7 +7691,7 @@ var PublicKey = require('../publickey');
 var Signature = require('../crypto/signature');
 var Networks = require('../networks');
 var $ = require('../util/preconditions');
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var errors = require('../errors');
 var buffer = require('buffer');
 var BufferUtil = require('../util/buffer');
@@ -8766,7 +8766,7 @@ Script.prototype.getSignatureOperationsCount = function(accurate) {
 module.exports = Script;
 
 }).call(this,require("buffer").Buffer)
-},{"../address":1,"../crypto/hash":8,"../crypto/signature":11,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../errors":17,"../networks":25,"../opcode":26,"../publickey":28,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":118,"lofantasygold":192}],32:[function(require,module,exports){
+},{"../address":1,"../crypto/hash":8,"../crypto/signature":11,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../errors":17,"../networks":25,"../opcode":26,"../publickey":28,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":118,"lodash":192}],32:[function(require,module,exports){
 module.exports = require('./transaction');
 
 module.exports.Input = require('./input');
@@ -8786,7 +8786,7 @@ module.exports.MultiSigScriptHash = require('./multisigscripthash.js');
 },{"./input":34,"./multisig.js":35,"./multisigscripthash.js":36,"./publickey":37,"./publickeyhash":38}],34:[function(require,module,exports){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('../../util/preconditions');
 var errors = require('../../errors');
 var BufferWriter = require('../../encoding/bufferwriter');
@@ -8981,10 +8981,10 @@ Input.prototype._estimateSize = function() {
 
 module.exports = Input;
 
-},{"../../encoding/bufferwriter":15,"../../errors":17,"../../script":29,"../../util/buffer":46,"../../util/js":47,"../../util/preconditions":48,"../output":39,"../sighash":40,"buffer":118,"lofantasygold":192}],35:[function(require,module,exports){
+},{"../../encoding/bufferwriter":15,"../../errors":17,"../../script":29,"../../util/buffer":46,"../../util/js":47,"../../util/preconditions":48,"../output":39,"../sighash":40,"buffer":118,"lodash":192}],35:[function(require,module,exports){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var inherits = require('inherits');
 var Transaction = require('../transaction');
 var Input = require('./input');
@@ -9194,10 +9194,10 @@ MultiSigInput.prototype._estimateSize = function() {
 
 module.exports = MultiSigInput;
 
-},{"../../crypto/signature":11,"../../publickey":28,"../../script":29,"../../util/buffer":46,"../../util/preconditions":48,"../output":39,"../sighash":40,"../signature":41,"../transaction":42,"./input":34,"inherits":189,"lofantasygold":192}],36:[function(require,module,exports){
+},{"../../crypto/signature":11,"../../publickey":28,"../../script":29,"../../util/buffer":46,"../../util/preconditions":48,"../output":39,"../sighash":40,"../signature":41,"../transaction":42,"./input":34,"inherits":189,"lodash":192}],36:[function(require,module,exports){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var inherits = require('inherits');
 var Input = require('./input');
 var Output = require('../output');
@@ -9362,7 +9362,7 @@ MultiSigScriptHashInput.prototype._estimateSize = function() {
 
 module.exports = MultiSigScriptHashInput;
 
-},{"../../crypto/signature":11,"../../publickey":28,"../../script":29,"../../util/buffer":46,"../../util/preconditions":48,"../output":39,"../sighash":40,"../signature":41,"./input":34,"inherits":189,"lofantasygold":192}],37:[function(require,module,exports){
+},{"../../crypto/signature":11,"../../publickey":28,"../../script":29,"../../util/buffer":46,"../../util/preconditions":48,"../output":39,"../sighash":40,"../signature":41,"./input":34,"inherits":189,"lodash":192}],37:[function(require,module,exports){
 'use strict';
 
 var inherits = require('inherits');
@@ -9553,7 +9553,7 @@ module.exports = PublicKeyHashInput;
 },{"../../crypto/hash":8,"../../crypto/signature":11,"../../script":29,"../../util/buffer":46,"../../util/preconditions":48,"../output":39,"../sighash":40,"../signature":41,"./input":34,"inherits":189}],39:[function(require,module,exports){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var BN = require('../crypto/bn');
 var buffer = require('buffer');
 var bufferUtil = require('../util/buffer');
@@ -9720,7 +9720,7 @@ Output.prototype.toBufferWriter = function(writer) {
 
 module.exports = Output;
 
-},{"../crypto/bn":6,"../encoding/bufferwriter":15,"../errors":17,"../script":29,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":118,"lofantasygold":192}],40:[function(require,module,exports){
+},{"../crypto/bn":6,"../encoding/bufferwriter":15,"../errors":17,"../script":29,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":118,"lodash":192}],40:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -9735,7 +9735,7 @@ var BN = require('../crypto/bn');
 var Hash = require('../crypto/hash');
 var ECDSA = require('../crypto/ecdsa');
 var $ = require('../util/preconditions');
-var _ = require('lofantasygold');
+var _ = require('lodash');
 
 var SIGHASH_SINGLE_BUG = '0000000000000000000000000000000000000000000000000000000000000001';
 var BITS_64_ON = 'ffffffffffffffff';
@@ -9860,11 +9860,11 @@ module.exports = {
 };
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/bn":6,"../crypto/ecdsa":7,"../crypto/hash":8,"../crypto/signature":11,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../script":29,"../util/preconditions":48,"./input":33,"./output":39,"./transaction":42,"buffer":118,"lofantasygold":192}],41:[function(require,module,exports){
+},{"../crypto/bn":6,"../crypto/ecdsa":7,"../crypto/hash":8,"../crypto/signature":11,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../script":29,"../util/preconditions":48,"./input":33,"./output":39,"./transaction":42,"buffer":118,"lodash":192}],41:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var inherits = require('inherits');
 var BufferUtil = require('../util/buffer');
@@ -9953,11 +9953,11 @@ TransactionSignature.fromObject = function(object) {
 module.exports = TransactionSignature;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/signature":11,"../errors":17,"../publickey":28,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":118,"inherits":189,"lofantasygold":192}],42:[function(require,module,exports){
+},{"../crypto/signature":11,"../errors":17,"../publickey":28,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":118,"inherits":189,"lodash":192}],42:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var buffer = require('buffer');
 var compare = Buffer.compare || require('buffer-compare');
@@ -10924,7 +10924,7 @@ Transaction.prototype.sort = function() {
 
 /**
  * Randomize this transaction's outputs ordering. The shuffling algorithm is a
- * version of the Fisher-Yates shuffle, provided by lofantasygold's _.shuffle().
+ * version of the Fisher-Yates shuffle, provided by lodash's _.shuffle().
  *
  * @return {Transaction} this
  */
@@ -11187,10 +11187,10 @@ Transaction.prototype.enableRBF = function() {
 module.exports = Transaction;
 
 }).call(this,require("buffer").Buffer)
-},{"../address":1,"../crypto/bn":6,"../crypto/hash":8,"../crypto/signature":11,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../errors":17,"../privatekey":27,"../script":29,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./input":33,"./output":39,"./sighash":40,"./unspentoutput":43,"buffer":118,"buffer-compare":116,"lofantasygold":192}],43:[function(require,module,exports){
+},{"../address":1,"../crypto/bn":6,"../crypto/hash":8,"../crypto/signature":11,"../encoding/bufferreader":14,"../encoding/bufferwriter":15,"../errors":17,"../privatekey":27,"../script":29,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./input":33,"./output":39,"./sighash":40,"./unspentoutput":43,"buffer":118,"buffer-compare":116,"lodash":192}],43:[function(require,module,exports){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var JSUtil = require('../util/js');
 
@@ -11289,10 +11289,10 @@ UnspentOutput.prototype.toObject = UnspentOutput.prototype.toJSON = function toO
 
 module.exports = UnspentOutput;
 
-},{"../address":1,"../script":29,"../unit":44,"../util/js":47,"../util/preconditions":48,"lofantasygold":192}],44:[function(require,module,exports){
+},{"../address":1,"../script":29,"../unit":44,"../util/js":47,"../util/preconditions":48,"lodash":192}],44:[function(require,module,exports){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 
 var errors = require('./errors');
 var $ = require('./util/preconditions');
@@ -11529,10 +11529,10 @@ Unit.prototype.inspect = function() {
 
 module.exports = Unit;
 
-},{"./errors":17,"./util/preconditions":48,"lofantasygold":192}],45:[function(require,module,exports){
+},{"./errors":17,"./util/preconditions":48,"lodash":192}],45:[function(require,module,exports){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 var URL = require('url');
 
 var Address = require('./address');
@@ -11754,7 +11754,7 @@ URI.prototype.inspect = function() {
 
 module.exports = URI;
 
-},{"./address":1,"./unit":44,"lofantasygold":192,"url":256}],46:[function(require,module,exports){
+},{"./address":1,"./unit":44,"lodash":192,"url":256}],46:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -11938,7 +11938,7 @@ module.exports.EMPTY_BUFFER = new Buffer(0);
 },{"./js":47,"./preconditions":48,"assert":64,"buffer":118}],47:[function(require,module,exports){
 'use strict';
 
-var _ = require('lofantasygold');
+var _ = require('lodash');
 
 /**
  * Determines whether a string contains only hexadecimal values
@@ -12021,11 +12021,11 @@ module.exports = {
   }
 };
 
-},{"lofantasygold":192}],48:[function(require,module,exports){
+},{"lodash":192}],48:[function(require,module,exports){
 'use strict';
 
 var errors = require('../errors');
-var _ = require('lofantasygold');
+var _ = require('lodash');
 
 module.exports = {
   checkState: function(condition, message) {
@@ -12057,7 +12057,7 @@ module.exports = {
   }
 };
 
-},{"../errors":17,"buffer":118,"lofantasygold":192}],49:[function(require,module,exports){
+},{"../errors":17,"buffer":118,"lodash":192}],49:[function(require,module,exports){
 var asn1 = exports;
 
 asn1.bignum = require('bn.js');
@@ -34622,9 +34622,9 @@ module.exports = Array.isArray || function (arr) {
 (function (global){
 /**
  * @license
- * Lofantasygold <https://lofantasygold.com/>
+ * lodash <https://lodash.com/>
  * Copyright JS Foundation and other contributors <https://js.foundation/>
- * Released under MIT license <https://lofantasygold.com/license>
+ * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
@@ -34644,13 +34644,13 @@ module.exports = Array.isArray || function (arr) {
       FUNC_ERROR_TEXT = 'Expected a function';
 
   /** Used to stand-in for `undefined` hash values. */
-  var HASH_UNDEFINED = '__lofantasygold_hash_undefined__';
+  var HASH_UNDEFINED = '__lodash_hash_undefined__';
 
   /** Used as the maximum memoize cache size. */
   var MAX_MEMOIZE_SIZE = 500;
 
   /** Used as the internal argument placeholder. */
-  var PLACEHOLDER = '__lofantasygold_placeholder__';
+  var PLACEHOLDER = '__lodash_placeholder__';
 
   /** Used to compose bitmasks for cloning. */
   var CLONE_DEEP_FLAG = 1,
@@ -36018,29 +36018,29 @@ module.exports = Array.isArray || function (arr) {
   /*--------------------------------------------------------------------------*/
 
   /**
-   * Create a new pristine `lofantasygold` function using the `context` object.
+   * Create a new pristine `lodash` function using the `context` object.
    *
    * @static
    * @memberOf _
    * @since 1.1.0
    * @category Util
    * @param {Object} [context=root] The context object.
-   * @returns {Function} Returns a new `lofantasygold` function.
+   * @returns {Function} Returns a new `lodash` function.
    * @example
    *
    * _.mixin({ 'foo': _.constant('foo') });
    *
-   * var lofantasygold = _.runInContext();
-   * lofantasygold.mixin({ 'bar': lofantasygold.constant('bar') });
+   * var lodash = _.runInContext();
+   * lodash.mixin({ 'bar': lodash.constant('bar') });
    *
    * _.isFunction(_.foo);
    * // => true
    * _.isFunction(_.bar);
    * // => false
    *
-   * lofantasygold.isFunction(lofantasygold.foo);
+   * lodash.isFunction(lodash.foo);
    * // => false
-   * lofantasygold.isFunction(lofantasygold.bar);
+   * lodash.isFunction(lodash.bar);
    * // => true
    *
    * // Create a suped-up `defer` in Node.js.
@@ -36128,7 +36128,7 @@ module.exports = Array.isArray || function (arr) {
         ctxNow = Date && Date.now !== root.Date.now && Date.now,
         ctxSetTimeout = context.setTimeout !== root.setTimeout && context.setTimeout;
 
-    /* Built-in method references for those with the same name as other `lofantasygold` methods. */
+    /* Built-in method references for those with the same name as other `lodash` methods. */
     var nativeCeil = Math.ceil,
         nativeFloor = Math.floor,
         nativeGetSymbols = Object.getOwnPropertySymbols,
@@ -36172,7 +36172,7 @@ module.exports = Array.isArray || function (arr) {
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lofantasygold` object which wraps `value` to enable implicit method
+     * Creates a `lodash` object which wraps `value` to enable implicit method
      * chain sequences. Methods that operate on and return arrays, collections,
      * and functions can be chained together. Methods that retrieve a single value
      * or may return a primitive value will automatically end the chain sequence
@@ -36196,7 +36196,7 @@ module.exports = Array.isArray || function (arr) {
      * Chaining is supported in custom builds as long as the `_#value` method is
      * directly or indirectly included in the build.
      *
-     * In addition to lofantasygold methods, wrappers have `Array` and `String` methods.
+     * In addition to lodash methods, wrappers have `Array` and `String` methods.
      *
      * The wrapper `Array` methods are:
      * `concat`, `join`, `pop`, `push`, `shift`, `sort`, `splice`, and `unshift`
@@ -36265,8 +36265,8 @@ module.exports = Array.isArray || function (arr) {
      * @name _
      * @constructor
      * @category Seq
-     * @param {*} value The value to wrap in a `lofantasygold` instance.
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @param {*} value The value to wrap in a `lodash` instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * function square(n) {
@@ -36288,16 +36288,16 @@ module.exports = Array.isArray || function (arr) {
      * _.isArray(squares.value());
      * // => true
      */
-    function lofantasygold(value) {
+    function lodash(value) {
       if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {
-        if (value instanceof LofantasygoldWrapper) {
+        if (value instanceof lodashWrapper) {
           return value;
         }
         if (hasOwnProperty.call(value, '__wrapped__')) {
           return wrapperClone(value);
         }
       }
-      return new LofantasygoldWrapper(value);
+      return new lodashWrapper(value);
     }
 
     /**
@@ -36329,18 +36329,18 @@ module.exports = Array.isArray || function (arr) {
      *
      * @private
      */
-    function baseLofantasygold() {
+    function baselodash() {
       // No operation performed.
     }
 
     /**
-     * The base constructor for creating `lofantasygold` wrapper objects.
+     * The base constructor for creating `lodash` wrapper objects.
      *
      * @private
      * @param {*} value The value to wrap.
      * @param {boolean} [chainAll] Enable explicit method chain sequences.
      */
-    function LofantasygoldWrapper(value, chainAll) {
+    function lodashWrapper(value, chainAll) {
       this.__wrapped__ = value;
       this.__actions__ = [];
       this.__chain__ = !!chainAll;
@@ -36349,7 +36349,7 @@ module.exports = Array.isArray || function (arr) {
     }
 
     /**
-     * By default, the template delimiters used by lofantasygold are like those in
+     * By default, the template delimiters used by lodash are like those in
      * embedded Ruby (ERB). Change the following template settings to use
      * alternative delimiters.
      *
@@ -36357,7 +36357,7 @@ module.exports = Array.isArray || function (arr) {
      * @memberOf _
      * @type {Object}
      */
-    lofantasygold.templateSettings = {
+    lodash.templateSettings = {
 
       /**
        * Used to detect `data` property values to be HTML-escaped.
@@ -36400,21 +36400,21 @@ module.exports = Array.isArray || function (arr) {
       'imports': {
 
         /**
-         * A reference to the `lofantasygold` function.
+         * A reference to the `lodash` function.
          *
          * @memberOf _.templateSettings.imports
          * @type {Function}
          */
-        '_': lofantasygold
+        '_': lodash
       }
     };
 
-    // Ensure wrappers are instances of `baseLofantasygold`.
-    lofantasygold.prototype = baseLofantasygold.prototype;
-    lofantasygold.prototype.constructor = lofantasygold;
+    // Ensure wrappers are instances of `baselodash`.
+    lodash.prototype = baselodash.prototype;
+    lodash.prototype.constructor = lodash;
 
-    LofantasygoldWrapper.prototype = baseCreate(baseLofantasygold.prototype);
-    LofantasygoldWrapper.prototype.constructor = LofantasygoldWrapper;
+    lodashWrapper.prototype = baseCreate(baselodash.prototype);
+    lodashWrapper.prototype.constructor = lodashWrapper;
 
     /*------------------------------------------------------------------------*/
 
@@ -36532,8 +36532,8 @@ module.exports = Array.isArray || function (arr) {
       return result;
     }
 
-    // Ensure `LazyWrapper` is an instance of `baseLofantasygold`.
-    LazyWrapper.prototype = baseCreate(baseLofantasygold.prototype);
+    // Ensure `LazyWrapper` is an instance of `baselodash`.
+    LazyWrapper.prototype = baseCreate(baselodash.prototype);
     LazyWrapper.prototype.constructor = LazyWrapper;
 
     /*------------------------------------------------------------------------*/
@@ -39766,7 +39766,7 @@ module.exports = Array.isArray || function (arr) {
       return flatRest(function(funcs) {
         var length = funcs.length,
             index = length,
-            prereq = LofantasygoldWrapper.prototype.thru;
+            prereq = lodashWrapper.prototype.thru;
 
         if (fromRight) {
           funcs.reverse();
@@ -39777,7 +39777,7 @@ module.exports = Array.isArray || function (arr) {
             throw new TypeError(FUNC_ERROR_TEXT);
           }
           if (prereq && !wrapper && getFuncName(func) == 'wrapper') {
-            var wrapper = new LofantasygoldWrapper([], true);
+            var wrapper = new lodashWrapper([], true);
           }
         }
         index = wrapper ? index : length;
@@ -40543,7 +40543,7 @@ module.exports = Array.isArray || function (arr) {
      * @returns {*} Returns the placeholder value.
      */
     function getHolder(func) {
-      var object = hasOwnProperty.call(lofantasygold, 'placeholder') ? lofantasygold : func;
+      var object = hasOwnProperty.call(lodash, 'placeholder') ? lodash : func;
       return object.placeholder;
     }
 
@@ -40559,7 +40559,7 @@ module.exports = Array.isArray || function (arr) {
      * @returns {Function} Returns the chosen function or its result.
      */
     function getIteratee() {
-      var result = lofantasygold.iteratee || iteratee;
+      var result = lodash.iteratee || iteratee;
       result = result === iteratee ? baseIteratee : result;
       return arguments.length ? result(arguments[0], arguments[1]) : result;
     }
@@ -40964,7 +40964,7 @@ module.exports = Array.isArray || function (arr) {
      */
     function isLaziable(func) {
       var funcName = getFuncName(func),
-          other = lofantasygold[funcName];
+          other = lodash[funcName];
 
       if (typeof other != 'function' || !(funcName in LazyWrapper.prototype)) {
         return false;
@@ -41437,7 +41437,7 @@ module.exports = Array.isArray || function (arr) {
       if (wrapper instanceof LazyWrapper) {
         return wrapper.clone();
       }
-      var result = new LofantasygoldWrapper(wrapper.__wrapped__, wrapper.__chain__);
+      var result = new lodashWrapper(wrapper.__wrapped__, wrapper.__chain__);
       result.__actions__ = copyArray(wrapper.__actions__);
       result.__index__  = wrapper.__index__;
       result.__values__ = wrapper.__values__;
@@ -43337,7 +43337,7 @@ module.exports = Array.isArray || function (arr) {
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lofantasygold` wrapper instance that wraps `value` with explicit method
+     * Creates a `lodash` wrapper instance that wraps `value` with explicit method
      * chain sequences enabled. The result of such sequences must be unwrapped
      * with `_#value`.
      *
@@ -43346,7 +43346,7 @@ module.exports = Array.isArray || function (arr) {
      * @since 1.3.0
      * @category Seq
      * @param {*} value The value to wrap.
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var users = [
@@ -43366,7 +43366,7 @@ module.exports = Array.isArray || function (arr) {
      * // => 'pebbles is 1'
      */
     function chain(value) {
-      var result = lofantasygold(value);
+      var result = lodash(value);
       result.__chain__ = true;
       return result;
     }
@@ -43434,7 +43434,7 @@ module.exports = Array.isArray || function (arr) {
      * @since 1.0.0
      * @category Seq
      * @param {...(string|string[])} [paths] The property paths to pick.
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
@@ -43458,7 +43458,7 @@ module.exports = Array.isArray || function (arr) {
         'args': [interceptor],
         'thisArg': undefined
       });
-      return new LofantasygoldWrapper(value, this.__chain__).thru(function(array) {
+      return new lodashWrapper(value, this.__chain__).thru(function(array) {
         if (length && !array.length) {
           array.push(undefined);
         }
@@ -43467,13 +43467,13 @@ module.exports = Array.isArray || function (arr) {
     });
 
     /**
-     * Creates a `lofantasygold` wrapper instance with explicit method chain sequences enabled.
+     * Creates a `lodash` wrapper instance with explicit method chain sequences enabled.
      *
      * @name chain
      * @memberOf _
      * @since 0.1.0
      * @category Seq
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var users = [
@@ -43504,7 +43504,7 @@ module.exports = Array.isArray || function (arr) {
      * @memberOf _
      * @since 3.2.0
      * @category Seq
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var array = [1, 2];
@@ -43524,7 +43524,7 @@ module.exports = Array.isArray || function (arr) {
      * // => [1, 2, 3]
      */
     function wrapperCommit() {
-      return new LofantasygoldWrapper(this.value(), this.__chain__);
+      return new lodashWrapper(this.value(), this.__chain__);
     }
 
     /**
@@ -43589,7 +43589,7 @@ module.exports = Array.isArray || function (arr) {
      * @since 3.2.0
      * @category Seq
      * @param {*} value The value to plant.
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * function square(n) {
@@ -43609,7 +43609,7 @@ module.exports = Array.isArray || function (arr) {
       var result,
           parent = this;
 
-      while (parent instanceof baseLofantasygold) {
+      while (parent instanceof baselodash) {
         var clone = wrapperClone(parent);
         clone.__index__ = 0;
         clone.__values__ = undefined;
@@ -43634,7 +43634,7 @@ module.exports = Array.isArray || function (arr) {
      * @memberOf _
      * @since 0.1.0
      * @category Seq
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var array = [1, 2, 3];
@@ -43658,7 +43658,7 @@ module.exports = Array.isArray || function (arr) {
           'args': [reverse],
           'thisArg': undefined
         });
-        return new LofantasygoldWrapper(wrapped, this.__chain__);
+        return new lodashWrapper(wrapped, this.__chain__);
       }
       return this.thru(reverse);
     }
@@ -44143,7 +44143,7 @@ module.exports = Array.isArray || function (arr) {
      * `iteratee`. The iteratee is invoked with three arguments:
      * (value, index|key, collection).
      *
-     * Many lofantasygold methods are guarded to work as iteratees for methods like
+     * Many lodash methods are guarded to work as iteratees for methods like
      * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
      *
      * The guarded methods are:
@@ -44276,7 +44276,7 @@ module.exports = Array.isArray || function (arr) {
      * value. The iteratee is invoked with four arguments:
      * (accumulator, value, index|key, collection).
      *
-     * Many lofantasygold methods are guarded to work as iteratees for methods like
+     * Many lodash methods are guarded to work as iteratees for methods like
      * `_.reduce`, `_.reduceRight`, and `_.transform`.
      *
      * The guarded methods are:
@@ -48861,8 +48861,8 @@ module.exports = Array.isArray || function (arr) {
      * @returns {string} Returns the escaped string.
      * @example
      *
-     * _.escapeRegExp('[lofantasygold](https://lofantasygold.com/)');
-     * // => '\[lofantasygold\]\(https://lofantasygold\.com/\)'
+     * _.escapeRegExp('[lodash](https://lodash.com/)');
+     * // => '\[lodash\]\(https://lodash\.com/\)'
      */
     function escapeRegExp(string) {
       string = toString(string);
@@ -49266,7 +49266,7 @@ module.exports = Array.isArray || function (arr) {
      * for easier debugging.
      *
      * For more information on precompiling templates see
-     * [lofantasygold's custom builds documentation](https://lofantasygold.com/custom-builds).
+     * [lodash's custom builds documentation](https://lodash.com/custom-builds).
      *
      * For more information on Chrome extension sandboxes see
      * [Chrome's extensions documentation](https://developer.chrome.com/extensions/sandboxingEval).
@@ -49285,7 +49285,7 @@ module.exports = Array.isArray || function (arr) {
      *  An object to import into the template as free variables.
      * @param {RegExp} [options.interpolate=_.templateSettings.interpolate]
      *  The "interpolate" delimiter.
-     * @param {string} [options.sourceURL='lofantasygold.templateSources[n]']
+     * @param {string} [options.sourceURL='lodash.templateSources[n]']
      *  The sourceURL of the compiled template.
      * @param {string} [options.variable='obj']
      *  The data object variable name.
@@ -49362,7 +49362,7 @@ module.exports = Array.isArray || function (arr) {
       // Based on John Resig's `tmpl` implementation
       // (http://ejohn.org/blog/javascript-micro-templating/)
       // and Laura Doktorova's doT.js (https://github.com/olado/doT).
-      var settings = lofantasygold.templateSettings;
+      var settings = lodash.templateSettings;
 
       if (guard && isIterateeCall(string, options, guard)) {
         options = undefined;
@@ -49392,7 +49392,7 @@ module.exports = Array.isArray || function (arr) {
       var sourceURL = '//# sourceURL=' +
         ('sourceURL' in options
           ? options.sourceURL
-          : ('lofantasygold.templateSources[' + (++templateCounter) + ']')
+          : ('lodash.templateSources[' + (++templateCounter) + ']')
         ) + '\n';
 
       string.replace(reDelimiters, function(match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
@@ -50244,14 +50244,14 @@ module.exports = Array.isArray || function (arr) {
      * object to the destination object. If `object` is a function, then methods
      * are added to its prototype as well.
      *
-     * **Note:** Use `_.runInContext` to create a pristine `lofantasygold` function to
+     * **Note:** Use `_.runInContext` to create a pristine `lodash` function to
      * avoid conflicts caused by modifying the original.
      *
      * @static
      * @since 0.1.0
      * @memberOf _
      * @category Util
-     * @param {Function|Object} [object=lofantasygold] The destination object.
+     * @param {Function|Object} [object=lodash] The destination object.
      * @param {Object} source The object of functions to add.
      * @param {Object} [options={}] The options object.
      * @param {boolean} [options.chain=true] Specify whether mixins are chainable.
@@ -50313,16 +50313,16 @@ module.exports = Array.isArray || function (arr) {
 
     /**
      * Reverts the `_` variable to its previous value and returns a reference to
-     * the `lofantasygold` function.
+     * the `lodash` function.
      *
      * @static
      * @since 0.1.0
      * @memberOf _
      * @category Util
-     * @returns {Function} Returns the `lofantasygold` function.
+     * @returns {Function} Returns the `lodash` function.
      * @example
      *
-     * var lofantasygold = _.noConflict();
+     * var lodash = _.noConflict();
      */
     function noConflict() {
       if (root._ === this) {
@@ -51108,327 +51108,327 @@ module.exports = Array.isArray || function (arr) {
     /*------------------------------------------------------------------------*/
 
     // Add methods that return wrapped values in chain sequences.
-    lofantasygold.after = after;
-    lofantasygold.ary = ary;
-    lofantasygold.assign = assign;
-    lofantasygold.assignIn = assignIn;
-    lofantasygold.assignInWith = assignInWith;
-    lofantasygold.assignWith = assignWith;
-    lofantasygold.at = at;
-    lofantasygold.before = before;
-    lofantasygold.bind = bind;
-    lofantasygold.bindAll = bindAll;
-    lofantasygold.bindKey = bindKey;
-    lofantasygold.castArray = castArray;
-    lofantasygold.chain = chain;
-    lofantasygold.chunk = chunk;
-    lofantasygold.compact = compact;
-    lofantasygold.concat = concat;
-    lofantasygold.cond = cond;
-    lofantasygold.conforms = conforms;
-    lofantasygold.constant = constant;
-    lofantasygold.countBy = countBy;
-    lofantasygold.create = create;
-    lofantasygold.curry = curry;
-    lofantasygold.curryRight = curryRight;
-    lofantasygold.debounce = debounce;
-    lofantasygold.defaults = defaults;
-    lofantasygold.defaultsDeep = defaultsDeep;
-    lofantasygold.defer = defer;
-    lofantasygold.delay = delay;
-    lofantasygold.difference = difference;
-    lofantasygold.differenceBy = differenceBy;
-    lofantasygold.differenceWith = differenceWith;
-    lofantasygold.drop = drop;
-    lofantasygold.dropRight = dropRight;
-    lofantasygold.dropRightWhile = dropRightWhile;
-    lofantasygold.dropWhile = dropWhile;
-    lofantasygold.fill = fill;
-    lofantasygold.filter = filter;
-    lofantasygold.flatMap = flatMap;
-    lofantasygold.flatMapDeep = flatMapDeep;
-    lofantasygold.flatMapDepth = flatMapDepth;
-    lofantasygold.flatten = flatten;
-    lofantasygold.flattenDeep = flattenDeep;
-    lofantasygold.flattenDepth = flattenDepth;
-    lofantasygold.flip = flip;
-    lofantasygold.flow = flow;
-    lofantasygold.flowRight = flowRight;
-    lofantasygold.fromPairs = fromPairs;
-    lofantasygold.functions = functions;
-    lofantasygold.functionsIn = functionsIn;
-    lofantasygold.groupBy = groupBy;
-    lofantasygold.initial = initial;
-    lofantasygold.intersection = intersection;
-    lofantasygold.intersectionBy = intersectionBy;
-    lofantasygold.intersectionWith = intersectionWith;
-    lofantasygold.invert = invert;
-    lofantasygold.invertBy = invertBy;
-    lofantasygold.invokeMap = invokeMap;
-    lofantasygold.iteratee = iteratee;
-    lofantasygold.keyBy = keyBy;
-    lofantasygold.keys = keys;
-    lofantasygold.keysIn = keysIn;
-    lofantasygold.map = map;
-    lofantasygold.mapKeys = mapKeys;
-    lofantasygold.mapValues = mapValues;
-    lofantasygold.matches = matches;
-    lofantasygold.matchesProperty = matchesProperty;
-    lofantasygold.memoize = memoize;
-    lofantasygold.merge = merge;
-    lofantasygold.mergeWith = mergeWith;
-    lofantasygold.method = method;
-    lofantasygold.methodOf = methodOf;
-    lofantasygold.mixin = mixin;
-    lofantasygold.negate = negate;
-    lofantasygold.nthArg = nthArg;
-    lofantasygold.omit = omit;
-    lofantasygold.omitBy = omitBy;
-    lofantasygold.once = once;
-    lofantasygold.orderBy = orderBy;
-    lofantasygold.over = over;
-    lofantasygold.overArgs = overArgs;
-    lofantasygold.overEvery = overEvery;
-    lofantasygold.overSome = overSome;
-    lofantasygold.partial = partial;
-    lofantasygold.partialRight = partialRight;
-    lofantasygold.partition = partition;
-    lofantasygold.pick = pick;
-    lofantasygold.pickBy = pickBy;
-    lofantasygold.property = property;
-    lofantasygold.propertyOf = propertyOf;
-    lofantasygold.pull = pull;
-    lofantasygold.pullAll = pullAll;
-    lofantasygold.pullAllBy = pullAllBy;
-    lofantasygold.pullAllWith = pullAllWith;
-    lofantasygold.pullAt = pullAt;
-    lofantasygold.range = range;
-    lofantasygold.rangeRight = rangeRight;
-    lofantasygold.rearg = rearg;
-    lofantasygold.reject = reject;
-    lofantasygold.remove = remove;
-    lofantasygold.rest = rest;
-    lofantasygold.reverse = reverse;
-    lofantasygold.sampleSize = sampleSize;
-    lofantasygold.set = set;
-    lofantasygold.setWith = setWith;
-    lofantasygold.shuffle = shuffle;
-    lofantasygold.slice = slice;
-    lofantasygold.sortBy = sortBy;
-    lofantasygold.sortedUniq = sortedUniq;
-    lofantasygold.sortedUniqBy = sortedUniqBy;
-    lofantasygold.split = split;
-    lofantasygold.spread = spread;
-    lofantasygold.tail = tail;
-    lofantasygold.take = take;
-    lofantasygold.takeRight = takeRight;
-    lofantasygold.takeRightWhile = takeRightWhile;
-    lofantasygold.takeWhile = takeWhile;
-    lofantasygold.tap = tap;
-    lofantasygold.throttle = throttle;
-    lofantasygold.thru = thru;
-    lofantasygold.toArray = toArray;
-    lofantasygold.toPairs = toPairs;
-    lofantasygold.toPairsIn = toPairsIn;
-    lofantasygold.toPath = toPath;
-    lofantasygold.toPlainObject = toPlainObject;
-    lofantasygold.transform = transform;
-    lofantasygold.unary = unary;
-    lofantasygold.union = union;
-    lofantasygold.unionBy = unionBy;
-    lofantasygold.unionWith = unionWith;
-    lofantasygold.uniq = uniq;
-    lofantasygold.uniqBy = uniqBy;
-    lofantasygold.uniqWith = uniqWith;
-    lofantasygold.unset = unset;
-    lofantasygold.unzip = unzip;
-    lofantasygold.unzipWith = unzipWith;
-    lofantasygold.update = update;
-    lofantasygold.updateWith = updateWith;
-    lofantasygold.values = values;
-    lofantasygold.valuesIn = valuesIn;
-    lofantasygold.without = without;
-    lofantasygold.words = words;
-    lofantasygold.wrap = wrap;
-    lofantasygold.xor = xor;
-    lofantasygold.xorBy = xorBy;
-    lofantasygold.xorWith = xorWith;
-    lofantasygold.zip = zip;
-    lofantasygold.zipObject = zipObject;
-    lofantasygold.zipObjectDeep = zipObjectDeep;
-    lofantasygold.zipWith = zipWith;
+    lodash.after = after;
+    lodash.ary = ary;
+    lodash.assign = assign;
+    lodash.assignIn = assignIn;
+    lodash.assignInWith = assignInWith;
+    lodash.assignWith = assignWith;
+    lodash.at = at;
+    lodash.before = before;
+    lodash.bind = bind;
+    lodash.bindAll = bindAll;
+    lodash.bindKey = bindKey;
+    lodash.castArray = castArray;
+    lodash.chain = chain;
+    lodash.chunk = chunk;
+    lodash.compact = compact;
+    lodash.concat = concat;
+    lodash.cond = cond;
+    lodash.conforms = conforms;
+    lodash.constant = constant;
+    lodash.countBy = countBy;
+    lodash.create = create;
+    lodash.curry = curry;
+    lodash.curryRight = curryRight;
+    lodash.debounce = debounce;
+    lodash.defaults = defaults;
+    lodash.defaultsDeep = defaultsDeep;
+    lodash.defer = defer;
+    lodash.delay = delay;
+    lodash.difference = difference;
+    lodash.differenceBy = differenceBy;
+    lodash.differenceWith = differenceWith;
+    lodash.drop = drop;
+    lodash.dropRight = dropRight;
+    lodash.dropRightWhile = dropRightWhile;
+    lodash.dropWhile = dropWhile;
+    lodash.fill = fill;
+    lodash.filter = filter;
+    lodash.flatMap = flatMap;
+    lodash.flatMapDeep = flatMapDeep;
+    lodash.flatMapDepth = flatMapDepth;
+    lodash.flatten = flatten;
+    lodash.flattenDeep = flattenDeep;
+    lodash.flattenDepth = flattenDepth;
+    lodash.flip = flip;
+    lodash.flow = flow;
+    lodash.flowRight = flowRight;
+    lodash.fromPairs = fromPairs;
+    lodash.functions = functions;
+    lodash.functionsIn = functionsIn;
+    lodash.groupBy = groupBy;
+    lodash.initial = initial;
+    lodash.intersection = intersection;
+    lodash.intersectionBy = intersectionBy;
+    lodash.intersectionWith = intersectionWith;
+    lodash.invert = invert;
+    lodash.invertBy = invertBy;
+    lodash.invokeMap = invokeMap;
+    lodash.iteratee = iteratee;
+    lodash.keyBy = keyBy;
+    lodash.keys = keys;
+    lodash.keysIn = keysIn;
+    lodash.map = map;
+    lodash.mapKeys = mapKeys;
+    lodash.mapValues = mapValues;
+    lodash.matches = matches;
+    lodash.matchesProperty = matchesProperty;
+    lodash.memoize = memoize;
+    lodash.merge = merge;
+    lodash.mergeWith = mergeWith;
+    lodash.method = method;
+    lodash.methodOf = methodOf;
+    lodash.mixin = mixin;
+    lodash.negate = negate;
+    lodash.nthArg = nthArg;
+    lodash.omit = omit;
+    lodash.omitBy = omitBy;
+    lodash.once = once;
+    lodash.orderBy = orderBy;
+    lodash.over = over;
+    lodash.overArgs = overArgs;
+    lodash.overEvery = overEvery;
+    lodash.overSome = overSome;
+    lodash.partial = partial;
+    lodash.partialRight = partialRight;
+    lodash.partition = partition;
+    lodash.pick = pick;
+    lodash.pickBy = pickBy;
+    lodash.property = property;
+    lodash.propertyOf = propertyOf;
+    lodash.pull = pull;
+    lodash.pullAll = pullAll;
+    lodash.pullAllBy = pullAllBy;
+    lodash.pullAllWith = pullAllWith;
+    lodash.pullAt = pullAt;
+    lodash.range = range;
+    lodash.rangeRight = rangeRight;
+    lodash.rearg = rearg;
+    lodash.reject = reject;
+    lodash.remove = remove;
+    lodash.rest = rest;
+    lodash.reverse = reverse;
+    lodash.sampleSize = sampleSize;
+    lodash.set = set;
+    lodash.setWith = setWith;
+    lodash.shuffle = shuffle;
+    lodash.slice = slice;
+    lodash.sortBy = sortBy;
+    lodash.sortedUniq = sortedUniq;
+    lodash.sortedUniqBy = sortedUniqBy;
+    lodash.split = split;
+    lodash.spread = spread;
+    lodash.tail = tail;
+    lodash.take = take;
+    lodash.takeRight = takeRight;
+    lodash.takeRightWhile = takeRightWhile;
+    lodash.takeWhile = takeWhile;
+    lodash.tap = tap;
+    lodash.throttle = throttle;
+    lodash.thru = thru;
+    lodash.toArray = toArray;
+    lodash.toPairs = toPairs;
+    lodash.toPairsIn = toPairsIn;
+    lodash.toPath = toPath;
+    lodash.toPlainObject = toPlainObject;
+    lodash.transform = transform;
+    lodash.unary = unary;
+    lodash.union = union;
+    lodash.unionBy = unionBy;
+    lodash.unionWith = unionWith;
+    lodash.uniq = uniq;
+    lodash.uniqBy = uniqBy;
+    lodash.uniqWith = uniqWith;
+    lodash.unset = unset;
+    lodash.unzip = unzip;
+    lodash.unzipWith = unzipWith;
+    lodash.update = update;
+    lodash.updateWith = updateWith;
+    lodash.values = values;
+    lodash.valuesIn = valuesIn;
+    lodash.without = without;
+    lodash.words = words;
+    lodash.wrap = wrap;
+    lodash.xor = xor;
+    lodash.xorBy = xorBy;
+    lodash.xorWith = xorWith;
+    lodash.zip = zip;
+    lodash.zipObject = zipObject;
+    lodash.zipObjectDeep = zipObjectDeep;
+    lodash.zipWith = zipWith;
 
     // Add aliases.
-    lofantasygold.entries = toPairs;
-    lofantasygold.entriesIn = toPairsIn;
-    lofantasygold.extend = assignIn;
-    lofantasygold.extendWith = assignInWith;
+    lodash.entries = toPairs;
+    lodash.entriesIn = toPairsIn;
+    lodash.extend = assignIn;
+    lodash.extendWith = assignInWith;
 
-    // Add methods to `lofantasygold.prototype`.
-    mixin(lofantasygold, lofantasygold);
+    // Add methods to `lodash.prototype`.
+    mixin(lodash, lodash);
 
     /*------------------------------------------------------------------------*/
 
     // Add methods that return unwrapped values in chain sequences.
-    lofantasygold.add = add;
-    lofantasygold.attempt = attempt;
-    lofantasygold.camelCase = camelCase;
-    lofantasygold.capitalize = capitalize;
-    lofantasygold.ceil = ceil;
-    lofantasygold.clamp = clamp;
-    lofantasygold.clone = clone;
-    lofantasygold.cloneDeep = cloneDeep;
-    lofantasygold.cloneDeepWith = cloneDeepWith;
-    lofantasygold.cloneWith = cloneWith;
-    lofantasygold.conformsTo = conformsTo;
-    lofantasygold.deburr = deburr;
-    lofantasygold.defaultTo = defaultTo;
-    lofantasygold.divide = divide;
-    lofantasygold.endsWith = endsWith;
-    lofantasygold.eq = eq;
-    lofantasygold.escape = escape;
-    lofantasygold.escapeRegExp = escapeRegExp;
-    lofantasygold.every = every;
-    lofantasygold.find = find;
-    lofantasygold.findIndex = findIndex;
-    lofantasygold.findKey = findKey;
-    lofantasygold.findLast = findLast;
-    lofantasygold.findLastIndex = findLastIndex;
-    lofantasygold.findLastKey = findLastKey;
-    lofantasygold.floor = floor;
-    lofantasygold.forEach = forEach;
-    lofantasygold.forEachRight = forEachRight;
-    lofantasygold.forIn = forIn;
-    lofantasygold.forInRight = forInRight;
-    lofantasygold.forOwn = forOwn;
-    lofantasygold.forOwnRight = forOwnRight;
-    lofantasygold.get = get;
-    lofantasygold.gt = gt;
-    lofantasygold.gte = gte;
-    lofantasygold.has = has;
-    lofantasygold.hasIn = hasIn;
-    lofantasygold.head = head;
-    lofantasygold.identity = identity;
-    lofantasygold.includes = includes;
-    lofantasygold.indexOf = indexOf;
-    lofantasygold.inRange = inRange;
-    lofantasygold.invoke = invoke;
-    lofantasygold.isArguments = isArguments;
-    lofantasygold.isArray = isArray;
-    lofantasygold.isArrayBuffer = isArrayBuffer;
-    lofantasygold.isArrayLike = isArrayLike;
-    lofantasygold.isArrayLikeObject = isArrayLikeObject;
-    lofantasygold.isBoolean = isBoolean;
-    lofantasygold.isBuffer = isBuffer;
-    lofantasygold.isDate = isDate;
-    lofantasygold.isElement = isElement;
-    lofantasygold.isEmpty = isEmpty;
-    lofantasygold.isEqual = isEqual;
-    lofantasygold.isEqualWith = isEqualWith;
-    lofantasygold.isError = isError;
-    lofantasygold.isFinite = isFinite;
-    lofantasygold.isFunction = isFunction;
-    lofantasygold.isInteger = isInteger;
-    lofantasygold.isLength = isLength;
-    lofantasygold.isMap = isMap;
-    lofantasygold.isMatch = isMatch;
-    lofantasygold.isMatchWith = isMatchWith;
-    lofantasygold.isNaN = isNaN;
-    lofantasygold.isNative = isNative;
-    lofantasygold.isNil = isNil;
-    lofantasygold.isNull = isNull;
-    lofantasygold.isNumber = isNumber;
-    lofantasygold.isObject = isObject;
-    lofantasygold.isObjectLike = isObjectLike;
-    lofantasygold.isPlainObject = isPlainObject;
-    lofantasygold.isRegExp = isRegExp;
-    lofantasygold.isSafeInteger = isSafeInteger;
-    lofantasygold.isSet = isSet;
-    lofantasygold.isString = isString;
-    lofantasygold.isSymbol = isSymbol;
-    lofantasygold.isTypedArray = isTypedArray;
-    lofantasygold.isUndefined = isUndefined;
-    lofantasygold.isWeakMap = isWeakMap;
-    lofantasygold.isWeakSet = isWeakSet;
-    lofantasygold.join = join;
-    lofantasygold.kebabCase = kebabCase;
-    lofantasygold.last = last;
-    lofantasygold.lastIndexOf = lastIndexOf;
-    lofantasygold.lowerCase = lowerCase;
-    lofantasygold.lowerFirst = lowerFirst;
-    lofantasygold.lt = lt;
-    lofantasygold.lte = lte;
-    lofantasygold.max = max;
-    lofantasygold.maxBy = maxBy;
-    lofantasygold.mean = mean;
-    lofantasygold.meanBy = meanBy;
-    lofantasygold.min = min;
-    lofantasygold.minBy = minBy;
-    lofantasygold.stubArray = stubArray;
-    lofantasygold.stubFalse = stubFalse;
-    lofantasygold.stubObject = stubObject;
-    lofantasygold.stubString = stubString;
-    lofantasygold.stubTrue = stubTrue;
-    lofantasygold.multiply = multiply;
-    lofantasygold.nth = nth;
-    lofantasygold.noConflict = noConflict;
-    lofantasygold.noop = noop;
-    lofantasygold.now = now;
-    lofantasygold.pad = pad;
-    lofantasygold.padEnd = padEnd;
-    lofantasygold.padStart = padStart;
-    lofantasygold.parseInt = parseInt;
-    lofantasygold.random = random;
-    lofantasygold.reduce = reduce;
-    lofantasygold.reduceRight = reduceRight;
-    lofantasygold.repeat = repeat;
-    lofantasygold.replace = replace;
-    lofantasygold.result = result;
-    lofantasygold.round = round;
-    lofantasygold.runInContext = runInContext;
-    lofantasygold.sample = sample;
-    lofantasygold.size = size;
-    lofantasygold.snakeCase = snakeCase;
-    lofantasygold.some = some;
-    lofantasygold.sortedIndex = sortedIndex;
-    lofantasygold.sortedIndexBy = sortedIndexBy;
-    lofantasygold.sortedIndexOf = sortedIndexOf;
-    lofantasygold.sortedLastIndex = sortedLastIndex;
-    lofantasygold.sortedLastIndexBy = sortedLastIndexBy;
-    lofantasygold.sortedLastIndexOf = sortedLastIndexOf;
-    lofantasygold.startCase = startCase;
-    lofantasygold.startsWith = startsWith;
-    lofantasygold.subtract = subtract;
-    lofantasygold.sum = sum;
-    lofantasygold.sumBy = sumBy;
-    lofantasygold.template = template;
-    lofantasygold.times = times;
-    lofantasygold.toFinite = toFinite;
-    lofantasygold.toInteger = toInteger;
-    lofantasygold.toLength = toLength;
-    lofantasygold.toLower = toLower;
-    lofantasygold.toNumber = toNumber;
-    lofantasygold.toSafeInteger = toSafeInteger;
-    lofantasygold.toString = toString;
-    lofantasygold.toUpper = toUpper;
-    lofantasygold.trim = trim;
-    lofantasygold.trimEnd = trimEnd;
-    lofantasygold.trimStart = trimStart;
-    lofantasygold.truncate = truncate;
-    lofantasygold.unescape = unescape;
-    lofantasygold.uniqueId = uniqueId;
-    lofantasygold.upperCase = upperCase;
-    lofantasygold.upperFirst = upperFirst;
+    lodash.add = add;
+    lodash.attempt = attempt;
+    lodash.camelCase = camelCase;
+    lodash.capitalize = capitalize;
+    lodash.ceil = ceil;
+    lodash.clamp = clamp;
+    lodash.clone = clone;
+    lodash.cloneDeep = cloneDeep;
+    lodash.cloneDeepWith = cloneDeepWith;
+    lodash.cloneWith = cloneWith;
+    lodash.conformsTo = conformsTo;
+    lodash.deburr = deburr;
+    lodash.defaultTo = defaultTo;
+    lodash.divide = divide;
+    lodash.endsWith = endsWith;
+    lodash.eq = eq;
+    lodash.escape = escape;
+    lodash.escapeRegExp = escapeRegExp;
+    lodash.every = every;
+    lodash.find = find;
+    lodash.findIndex = findIndex;
+    lodash.findKey = findKey;
+    lodash.findLast = findLast;
+    lodash.findLastIndex = findLastIndex;
+    lodash.findLastKey = findLastKey;
+    lodash.floor = floor;
+    lodash.forEach = forEach;
+    lodash.forEachRight = forEachRight;
+    lodash.forIn = forIn;
+    lodash.forInRight = forInRight;
+    lodash.forOwn = forOwn;
+    lodash.forOwnRight = forOwnRight;
+    lodash.get = get;
+    lodash.gt = gt;
+    lodash.gte = gte;
+    lodash.has = has;
+    lodash.hasIn = hasIn;
+    lodash.head = head;
+    lodash.identity = identity;
+    lodash.includes = includes;
+    lodash.indexOf = indexOf;
+    lodash.inRange = inRange;
+    lodash.invoke = invoke;
+    lodash.isArguments = isArguments;
+    lodash.isArray = isArray;
+    lodash.isArrayBuffer = isArrayBuffer;
+    lodash.isArrayLike = isArrayLike;
+    lodash.isArrayLikeObject = isArrayLikeObject;
+    lodash.isBoolean = isBoolean;
+    lodash.isBuffer = isBuffer;
+    lodash.isDate = isDate;
+    lodash.isElement = isElement;
+    lodash.isEmpty = isEmpty;
+    lodash.isEqual = isEqual;
+    lodash.isEqualWith = isEqualWith;
+    lodash.isError = isError;
+    lodash.isFinite = isFinite;
+    lodash.isFunction = isFunction;
+    lodash.isInteger = isInteger;
+    lodash.isLength = isLength;
+    lodash.isMap = isMap;
+    lodash.isMatch = isMatch;
+    lodash.isMatchWith = isMatchWith;
+    lodash.isNaN = isNaN;
+    lodash.isNative = isNative;
+    lodash.isNil = isNil;
+    lodash.isNull = isNull;
+    lodash.isNumber = isNumber;
+    lodash.isObject = isObject;
+    lodash.isObjectLike = isObjectLike;
+    lodash.isPlainObject = isPlainObject;
+    lodash.isRegExp = isRegExp;
+    lodash.isSafeInteger = isSafeInteger;
+    lodash.isSet = isSet;
+    lodash.isString = isString;
+    lodash.isSymbol = isSymbol;
+    lodash.isTypedArray = isTypedArray;
+    lodash.isUndefined = isUndefined;
+    lodash.isWeakMap = isWeakMap;
+    lodash.isWeakSet = isWeakSet;
+    lodash.join = join;
+    lodash.kebabCase = kebabCase;
+    lodash.last = last;
+    lodash.lastIndexOf = lastIndexOf;
+    lodash.lowerCase = lowerCase;
+    lodash.lowerFirst = lowerFirst;
+    lodash.lt = lt;
+    lodash.lte = lte;
+    lodash.max = max;
+    lodash.maxBy = maxBy;
+    lodash.mean = mean;
+    lodash.meanBy = meanBy;
+    lodash.min = min;
+    lodash.minBy = minBy;
+    lodash.stubArray = stubArray;
+    lodash.stubFalse = stubFalse;
+    lodash.stubObject = stubObject;
+    lodash.stubString = stubString;
+    lodash.stubTrue = stubTrue;
+    lodash.multiply = multiply;
+    lodash.nth = nth;
+    lodash.noConflict = noConflict;
+    lodash.noop = noop;
+    lodash.now = now;
+    lodash.pad = pad;
+    lodash.padEnd = padEnd;
+    lodash.padStart = padStart;
+    lodash.parseInt = parseInt;
+    lodash.random = random;
+    lodash.reduce = reduce;
+    lodash.reduceRight = reduceRight;
+    lodash.repeat = repeat;
+    lodash.replace = replace;
+    lodash.result = result;
+    lodash.round = round;
+    lodash.runInContext = runInContext;
+    lodash.sample = sample;
+    lodash.size = size;
+    lodash.snakeCase = snakeCase;
+    lodash.some = some;
+    lodash.sortedIndex = sortedIndex;
+    lodash.sortedIndexBy = sortedIndexBy;
+    lodash.sortedIndexOf = sortedIndexOf;
+    lodash.sortedLastIndex = sortedLastIndex;
+    lodash.sortedLastIndexBy = sortedLastIndexBy;
+    lodash.sortedLastIndexOf = sortedLastIndexOf;
+    lodash.startCase = startCase;
+    lodash.startsWith = startsWith;
+    lodash.subtract = subtract;
+    lodash.sum = sum;
+    lodash.sumBy = sumBy;
+    lodash.template = template;
+    lodash.times = times;
+    lodash.toFinite = toFinite;
+    lodash.toInteger = toInteger;
+    lodash.toLength = toLength;
+    lodash.toLower = toLower;
+    lodash.toNumber = toNumber;
+    lodash.toSafeInteger = toSafeInteger;
+    lodash.toString = toString;
+    lodash.toUpper = toUpper;
+    lodash.trim = trim;
+    lodash.trimEnd = trimEnd;
+    lodash.trimStart = trimStart;
+    lodash.truncate = truncate;
+    lodash.unescape = unescape;
+    lodash.uniqueId = uniqueId;
+    lodash.upperCase = upperCase;
+    lodash.upperFirst = upperFirst;
 
     // Add aliases.
-    lofantasygold.each = forEach;
-    lofantasygold.eachRight = forEachRight;
-    lofantasygold.first = head;
+    lodash.each = forEach;
+    lodash.eachRight = forEachRight;
+    lodash.first = head;
 
-    mixin(lofantasygold, (function() {
+    mixin(lodash, (function() {
       var source = {};
-      baseForOwn(lofantasygold, function(func, methodName) {
-        if (!hasOwnProperty.call(lofantasygold.prototype, methodName)) {
+      baseForOwn(lodash, function(func, methodName) {
+        if (!hasOwnProperty.call(lodash.prototype, methodName)) {
           source[methodName] = func;
         }
       });
@@ -51444,11 +51444,11 @@ module.exports = Array.isArray || function (arr) {
      * @memberOf _
      * @type {string}
      */
-    lofantasygold.VERSION = VERSION;
+    lodash.VERSION = VERSION;
 
     // Assign default placeholders.
     arrayEach(['bind', 'bindKey', 'curry', 'curryRight', 'partial', 'partialRight'], function(methodName) {
-      lofantasygold[methodName].placeholder = lofantasygold;
+      lodash[methodName].placeholder = lodash;
     });
 
     // Add `LazyWrapper` methods for `_.drop` and `_.take` variants.
@@ -51563,17 +51563,17 @@ module.exports = Array.isArray || function (arr) {
       return this.take(MAX_ARRAY_LENGTH);
     };
 
-    // Add `LazyWrapper` methods to `lofantasygold.prototype`.
+    // Add `LazyWrapper` methods to `lodash.prototype`.
     baseForOwn(LazyWrapper.prototype, function(func, methodName) {
       var checkIteratee = /^(?:filter|find|map|reject)|While$/.test(methodName),
           isTaker = /^(?:head|last)$/.test(methodName),
-          lofantasygoldFunc = lofantasygold[isTaker ? ('take' + (methodName == 'last' ? 'Right' : '')) : methodName],
+          lodashFunc = lodash[isTaker ? ('take' + (methodName == 'last' ? 'Right' : '')) : methodName],
           retUnwrapped = isTaker || /^find/.test(methodName);
 
-      if (!lofantasygoldFunc) {
+      if (!lodashFunc) {
         return;
       }
-      lofantasygold.prototype[methodName] = function() {
+      lodash.prototype[methodName] = function() {
         var value = this.__wrapped__,
             args = isTaker ? [1] : arguments,
             isLazy = value instanceof LazyWrapper,
@@ -51581,7 +51581,7 @@ module.exports = Array.isArray || function (arr) {
             useLazy = isLazy || isArray(value);
 
         var interceptor = function(value) {
-          var result = lofantasygoldFunc.apply(lofantasygold, arrayPush([value], args));
+          var result = lodashFunc.apply(lodash, arrayPush([value], args));
           return (isTaker && chainAll) ? result[0] : result;
         };
 
@@ -51598,7 +51598,7 @@ module.exports = Array.isArray || function (arr) {
           value = onlyLazy ? value : new LazyWrapper(this);
           var result = func.apply(value, args);
           result.__actions__.push({ 'func': thru, 'args': [interceptor], 'thisArg': undefined });
-          return new LofantasygoldWrapper(result, chainAll);
+          return new lodashWrapper(result, chainAll);
         }
         if (isUnwrapped && onlyLazy) {
           return func.apply(this, args);
@@ -51608,13 +51608,13 @@ module.exports = Array.isArray || function (arr) {
       };
     });
 
-    // Add `Array` methods to `lofantasygold.prototype`.
+    // Add `Array` methods to `lodash.prototype`.
     arrayEach(['pop', 'push', 'shift', 'sort', 'splice', 'unshift'], function(methodName) {
       var func = arrayProto[methodName],
           chainName = /^(?:push|sort|unshift)$/.test(methodName) ? 'tap' : 'thru',
           retUnwrapped = /^(?:pop|shift)$/.test(methodName);
 
-      lofantasygold.prototype[methodName] = function() {
+      lodash.prototype[methodName] = function() {
         var args = arguments;
         if (retUnwrapped && !this.__chain__) {
           var value = this.value();
@@ -51628,12 +51628,12 @@ module.exports = Array.isArray || function (arr) {
 
     // Map minified method names to their real names.
     baseForOwn(LazyWrapper.prototype, function(func, methodName) {
-      var lofantasygoldFunc = lofantasygold[methodName];
-      if (lofantasygoldFunc) {
-        var key = (lofantasygoldFunc.name + ''),
+      var lodashFunc = lodash[methodName];
+      if (lodashFunc) {
+        var key = (lodashFunc.name + ''),
             names = realNames[key] || (realNames[key] = []);
 
-        names.push({ 'name': methodName, 'func': lofantasygoldFunc });
+        names.push({ 'name': methodName, 'func': lodashFunc });
       }
     });
 
@@ -51647,35 +51647,35 @@ module.exports = Array.isArray || function (arr) {
     LazyWrapper.prototype.reverse = lazyReverse;
     LazyWrapper.prototype.value = lazyValue;
 
-    // Add chain sequence methods to the `lofantasygold` wrapper.
-    lofantasygold.prototype.at = wrapperAt;
-    lofantasygold.prototype.chain = wrapperChain;
-    lofantasygold.prototype.commit = wrapperCommit;
-    lofantasygold.prototype.next = wrapperNext;
-    lofantasygold.prototype.plant = wrapperPlant;
-    lofantasygold.prototype.reverse = wrapperReverse;
-    lofantasygold.prototype.toJSON = lofantasygold.prototype.valueOf = lofantasygold.prototype.value = wrapperValue;
+    // Add chain sequence methods to the `lodash` wrapper.
+    lodash.prototype.at = wrapperAt;
+    lodash.prototype.chain = wrapperChain;
+    lodash.prototype.commit = wrapperCommit;
+    lodash.prototype.next = wrapperNext;
+    lodash.prototype.plant = wrapperPlant;
+    lodash.prototype.reverse = wrapperReverse;
+    lodash.prototype.toJSON = lodash.prototype.valueOf = lodash.prototype.value = wrapperValue;
 
     // Add lazy aliases.
-    lofantasygold.prototype.first = lofantasygold.prototype.head;
+    lodash.prototype.first = lodash.prototype.head;
 
     if (symIterator) {
-      lofantasygold.prototype[symIterator] = wrapperToIterator;
+      lodash.prototype[symIterator] = wrapperToIterator;
     }
-    return lofantasygold;
+    return lodash;
   });
 
   /*--------------------------------------------------------------------------*/
 
-  // Export lofantasygold.
+  // Export lodash.
   var _ = runInContext();
 
   // Some AMD build optimizers, like r.js, check for condition patterns like:
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
-    // Expose Lofantasygold on the global object to prevent errors when Lofantasygold is
+    // Expose lodash on the global object to prevent errors when lodash is
     // loaded by a script tag in the presence of an AMD loader.
     // See http://requirejs.org/docs/errors.html#mismatch for more details.
-    // Use `_.noConflict` to remove Lofantasygold from the global object.
+    // Use `_.noConflict` to remove lodash from the global object.
     root._ = _;
 
     // Define as an anonymous module so, through path mapping, it can be
@@ -66732,7 +66732,7 @@ module.exports={
     "buffer-compare": "=1.0.0",
     "elliptic": "=3.0.3",
     "inherits": "=2.0.1",
-    "lofantasygold": "=4.17.1",
+    "lodash": "=4.17.1",
     "sha512": "=0.0.1",
     "x11-hash-js": "^1.0.0"
   },

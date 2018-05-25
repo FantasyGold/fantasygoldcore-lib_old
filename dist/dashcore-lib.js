@@ -1905,9 +1905,9 @@ if (typeof Object.create === 'function') {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @license
- * Lofantasygold <https://lofantasygold.com/>
+ * lodash <https://lodash.com/>
  * Copyright JS Foundation and other contributors <https://js.foundation/>
- * Released under MIT license <https://lofantasygold.com/license>
+ * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
@@ -1927,13 +1927,13 @@ if (typeof Object.create === 'function') {
       FUNC_ERROR_TEXT = 'Expected a function';
 
   /** Used to stand-in for `undefined` hash values. */
-  var HASH_UNDEFINED = '__lofantasygold_hash_undefined__';
+  var HASH_UNDEFINED = '__lodash_hash_undefined__';
 
   /** Used as the maximum memoize cache size. */
   var MAX_MEMOIZE_SIZE = 500;
 
   /** Used as the internal argument placeholder. */
-  var PLACEHOLDER = '__lofantasygold_placeholder__';
+  var PLACEHOLDER = '__lodash_placeholder__';
 
   /** Used to compose bitmasks for cloning. */
   var CLONE_DEEP_FLAG = 1,
@@ -3301,29 +3301,29 @@ if (typeof Object.create === 'function') {
   /*--------------------------------------------------------------------------*/
 
   /**
-   * Create a new pristine `lofantasygold` function using the `context` object.
+   * Create a new pristine `lodash` function using the `context` object.
    *
    * @static
    * @memberOf _
    * @since 1.1.0
    * @category Util
    * @param {Object} [context=root] The context object.
-   * @returns {Function} Returns a new `lofantasygold` function.
+   * @returns {Function} Returns a new `lodash` function.
    * @example
    *
    * _.mixin({ 'foo': _.constant('foo') });
    *
-   * var lofantasygold = _.runInContext();
-   * lofantasygold.mixin({ 'bar': lofantasygold.constant('bar') });
+   * var lodash = _.runInContext();
+   * lodash.mixin({ 'bar': lodash.constant('bar') });
    *
    * _.isFunction(_.foo);
    * // => true
    * _.isFunction(_.bar);
    * // => false
    *
-   * lofantasygold.isFunction(lofantasygold.foo);
+   * lodash.isFunction(lodash.foo);
    * // => false
-   * lofantasygold.isFunction(lofantasygold.bar);
+   * lodash.isFunction(lodash.bar);
    * // => true
    *
    * // Create a suped-up `defer` in Node.js.
@@ -3411,7 +3411,7 @@ if (typeof Object.create === 'function') {
         ctxNow = Date && Date.now !== root.Date.now && Date.now,
         ctxSetTimeout = context.setTimeout !== root.setTimeout && context.setTimeout;
 
-    /* Built-in method references for those with the same name as other `lofantasygold` methods. */
+    /* Built-in method references for those with the same name as other `lodash` methods. */
     var nativeCeil = Math.ceil,
         nativeFloor = Math.floor,
         nativeGetSymbols = Object.getOwnPropertySymbols,
@@ -3455,7 +3455,7 @@ if (typeof Object.create === 'function') {
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lofantasygold` object which wraps `value` to enable implicit method
+     * Creates a `lodash` object which wraps `value` to enable implicit method
      * chain sequences. Methods that operate on and return arrays, collections,
      * and functions can be chained together. Methods that retrieve a single value
      * or may return a primitive value will automatically end the chain sequence
@@ -3479,7 +3479,7 @@ if (typeof Object.create === 'function') {
      * Chaining is supported in custom builds as long as the `_#value` method is
      * directly or indirectly included in the build.
      *
-     * In addition to lofantasygold methods, wrappers have `Array` and `String` methods.
+     * In addition to lodash methods, wrappers have `Array` and `String` methods.
      *
      * The wrapper `Array` methods are:
      * `concat`, `join`, `pop`, `push`, `shift`, `sort`, `splice`, and `unshift`
@@ -3548,8 +3548,8 @@ if (typeof Object.create === 'function') {
      * @name _
      * @constructor
      * @category Seq
-     * @param {*} value The value to wrap in a `lofantasygold` instance.
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @param {*} value The value to wrap in a `lodash` instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * function square(n) {
@@ -3571,16 +3571,16 @@ if (typeof Object.create === 'function') {
      * _.isArray(squares.value());
      * // => true
      */
-    function lofantasygold(value) {
+    function lodash(value) {
       if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {
-        if (value instanceof LofantasygoldWrapper) {
+        if (value instanceof lodashWrapper) {
           return value;
         }
         if (hasOwnProperty.call(value, '__wrapped__')) {
           return wrapperClone(value);
         }
       }
-      return new LofantasygoldWrapper(value);
+      return new lodashWrapper(value);
     }
 
     /**
@@ -3612,18 +3612,18 @@ if (typeof Object.create === 'function') {
      *
      * @private
      */
-    function baseLofantasygold() {
+    function baselodash() {
       // No operation performed.
     }
 
     /**
-     * The base constructor for creating `lofantasygold` wrapper objects.
+     * The base constructor for creating `lodash` wrapper objects.
      *
      * @private
      * @param {*} value The value to wrap.
      * @param {boolean} [chainAll] Enable explicit method chain sequences.
      */
-    function LofantasygoldWrapper(value, chainAll) {
+    function lodashWrapper(value, chainAll) {
       this.__wrapped__ = value;
       this.__actions__ = [];
       this.__chain__ = !!chainAll;
@@ -3632,7 +3632,7 @@ if (typeof Object.create === 'function') {
     }
 
     /**
-     * By default, the template delimiters used by lofantasygold are like those in
+     * By default, the template delimiters used by lodash are like those in
      * embedded Ruby (ERB). Change the following template settings to use
      * alternative delimiters.
      *
@@ -3640,7 +3640,7 @@ if (typeof Object.create === 'function') {
      * @memberOf _
      * @type {Object}
      */
-    lofantasygold.templateSettings = {
+    lodash.templateSettings = {
 
       /**
        * Used to detect `data` property values to be HTML-escaped.
@@ -3683,21 +3683,21 @@ if (typeof Object.create === 'function') {
       'imports': {
 
         /**
-         * A reference to the `lofantasygold` function.
+         * A reference to the `lodash` function.
          *
          * @memberOf _.templateSettings.imports
          * @type {Function}
          */
-        '_': lofantasygold
+        '_': lodash
       }
     };
 
-    // Ensure wrappers are instances of `baseLofantasygold`.
-    lofantasygold.prototype = baseLofantasygold.prototype;
-    lofantasygold.prototype.constructor = lofantasygold;
+    // Ensure wrappers are instances of `baselodash`.
+    lodash.prototype = baselodash.prototype;
+    lodash.prototype.constructor = lodash;
 
-    LofantasygoldWrapper.prototype = baseCreate(baseLofantasygold.prototype);
-    LofantasygoldWrapper.prototype.constructor = LofantasygoldWrapper;
+    lodashWrapper.prototype = baseCreate(baselodash.prototype);
+    lodashWrapper.prototype.constructor = lodashWrapper;
 
     /*------------------------------------------------------------------------*/
 
@@ -3815,8 +3815,8 @@ if (typeof Object.create === 'function') {
       return result;
     }
 
-    // Ensure `LazyWrapper` is an instance of `baseLofantasygold`.
-    LazyWrapper.prototype = baseCreate(baseLofantasygold.prototype);
+    // Ensure `LazyWrapper` is an instance of `baselodash`.
+    LazyWrapper.prototype = baseCreate(baselodash.prototype);
     LazyWrapper.prototype.constructor = LazyWrapper;
 
     /*------------------------------------------------------------------------*/
@@ -7049,7 +7049,7 @@ if (typeof Object.create === 'function') {
       return flatRest(function(funcs) {
         var length = funcs.length,
             index = length,
-            prereq = LofantasygoldWrapper.prototype.thru;
+            prereq = lodashWrapper.prototype.thru;
 
         if (fromRight) {
           funcs.reverse();
@@ -7060,7 +7060,7 @@ if (typeof Object.create === 'function') {
             throw new TypeError(FUNC_ERROR_TEXT);
           }
           if (prereq && !wrapper && getFuncName(func) == 'wrapper') {
-            var wrapper = new LofantasygoldWrapper([], true);
+            var wrapper = new lodashWrapper([], true);
           }
         }
         index = wrapper ? index : length;
@@ -7826,7 +7826,7 @@ if (typeof Object.create === 'function') {
      * @returns {*} Returns the placeholder value.
      */
     function getHolder(func) {
-      var object = hasOwnProperty.call(lofantasygold, 'placeholder') ? lofantasygold : func;
+      var object = hasOwnProperty.call(lodash, 'placeholder') ? lodash : func;
       return object.placeholder;
     }
 
@@ -7842,7 +7842,7 @@ if (typeof Object.create === 'function') {
      * @returns {Function} Returns the chosen function or its result.
      */
     function getIteratee() {
-      var result = lofantasygold.iteratee || iteratee;
+      var result = lodash.iteratee || iteratee;
       result = result === iteratee ? baseIteratee : result;
       return arguments.length ? result(arguments[0], arguments[1]) : result;
     }
@@ -8247,7 +8247,7 @@ if (typeof Object.create === 'function') {
      */
     function isLaziable(func) {
       var funcName = getFuncName(func),
-          other = lofantasygold[funcName];
+          other = lodash[funcName];
 
       if (typeof other != 'function' || !(funcName in LazyWrapper.prototype)) {
         return false;
@@ -8720,7 +8720,7 @@ if (typeof Object.create === 'function') {
       if (wrapper instanceof LazyWrapper) {
         return wrapper.clone();
       }
-      var result = new LofantasygoldWrapper(wrapper.__wrapped__, wrapper.__chain__);
+      var result = new lodashWrapper(wrapper.__wrapped__, wrapper.__chain__);
       result.__actions__ = copyArray(wrapper.__actions__);
       result.__index__  = wrapper.__index__;
       result.__values__ = wrapper.__values__;
@@ -10620,7 +10620,7 @@ if (typeof Object.create === 'function') {
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lofantasygold` wrapper instance that wraps `value` with explicit method
+     * Creates a `lodash` wrapper instance that wraps `value` with explicit method
      * chain sequences enabled. The result of such sequences must be unwrapped
      * with `_#value`.
      *
@@ -10629,7 +10629,7 @@ if (typeof Object.create === 'function') {
      * @since 1.3.0
      * @category Seq
      * @param {*} value The value to wrap.
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var users = [
@@ -10649,7 +10649,7 @@ if (typeof Object.create === 'function') {
      * // => 'pebbles is 1'
      */
     function chain(value) {
-      var result = lofantasygold(value);
+      var result = lodash(value);
       result.__chain__ = true;
       return result;
     }
@@ -10717,7 +10717,7 @@ if (typeof Object.create === 'function') {
      * @since 1.0.0
      * @category Seq
      * @param {...(string|string[])} [paths] The property paths to pick.
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
@@ -10741,7 +10741,7 @@ if (typeof Object.create === 'function') {
         'args': [interceptor],
         'thisArg': undefined
       });
-      return new LofantasygoldWrapper(value, this.__chain__).thru(function(array) {
+      return new lodashWrapper(value, this.__chain__).thru(function(array) {
         if (length && !array.length) {
           array.push(undefined);
         }
@@ -10750,13 +10750,13 @@ if (typeof Object.create === 'function') {
     });
 
     /**
-     * Creates a `lofantasygold` wrapper instance with explicit method chain sequences enabled.
+     * Creates a `lodash` wrapper instance with explicit method chain sequences enabled.
      *
      * @name chain
      * @memberOf _
      * @since 0.1.0
      * @category Seq
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var users = [
@@ -10787,7 +10787,7 @@ if (typeof Object.create === 'function') {
      * @memberOf _
      * @since 3.2.0
      * @category Seq
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var array = [1, 2];
@@ -10807,7 +10807,7 @@ if (typeof Object.create === 'function') {
      * // => [1, 2, 3]
      */
     function wrapperCommit() {
-      return new LofantasygoldWrapper(this.value(), this.__chain__);
+      return new lodashWrapper(this.value(), this.__chain__);
     }
 
     /**
@@ -10872,7 +10872,7 @@ if (typeof Object.create === 'function') {
      * @since 3.2.0
      * @category Seq
      * @param {*} value The value to plant.
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * function square(n) {
@@ -10892,7 +10892,7 @@ if (typeof Object.create === 'function') {
       var result,
           parent = this;
 
-      while (parent instanceof baseLofantasygold) {
+      while (parent instanceof baselodash) {
         var clone = wrapperClone(parent);
         clone.__index__ = 0;
         clone.__values__ = undefined;
@@ -10917,7 +10917,7 @@ if (typeof Object.create === 'function') {
      * @memberOf _
      * @since 0.1.0
      * @category Seq
-     * @returns {Object} Returns the new `lofantasygold` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var array = [1, 2, 3];
@@ -10941,7 +10941,7 @@ if (typeof Object.create === 'function') {
           'args': [reverse],
           'thisArg': undefined
         });
-        return new LofantasygoldWrapper(wrapped, this.__chain__);
+        return new lodashWrapper(wrapped, this.__chain__);
       }
       return this.thru(reverse);
     }
@@ -11426,7 +11426,7 @@ if (typeof Object.create === 'function') {
      * `iteratee`. The iteratee is invoked with three arguments:
      * (value, index|key, collection).
      *
-     * Many lofantasygold methods are guarded to work as iteratees for methods like
+     * Many lodash methods are guarded to work as iteratees for methods like
      * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
      *
      * The guarded methods are:
@@ -11559,7 +11559,7 @@ if (typeof Object.create === 'function') {
      * value. The iteratee is invoked with four arguments:
      * (accumulator, value, index|key, collection).
      *
-     * Many lofantasygold methods are guarded to work as iteratees for methods like
+     * Many lodash methods are guarded to work as iteratees for methods like
      * `_.reduce`, `_.reduceRight`, and `_.transform`.
      *
      * The guarded methods are:
@@ -16144,8 +16144,8 @@ if (typeof Object.create === 'function') {
      * @returns {string} Returns the escaped string.
      * @example
      *
-     * _.escapeRegExp('[lofantasygold](https://lofantasygold.com/)');
-     * // => '\[lofantasygold\]\(https://lofantasygold\.com/\)'
+     * _.escapeRegExp('[lodash](https://lodash.com/)');
+     * // => '\[lodash\]\(https://lodash\.com/\)'
      */
     function escapeRegExp(string) {
       string = toString(string);
@@ -16549,7 +16549,7 @@ if (typeof Object.create === 'function') {
      * for easier debugging.
      *
      * For more information on precompiling templates see
-     * [lofantasygold's custom builds documentation](https://lofantasygold.com/custom-builds).
+     * [lodash's custom builds documentation](https://lodash.com/custom-builds).
      *
      * For more information on Chrome extension sandboxes see
      * [Chrome's extensions documentation](https://developer.chrome.com/extensions/sandboxingEval).
@@ -16568,7 +16568,7 @@ if (typeof Object.create === 'function') {
      *  An object to import into the template as free variables.
      * @param {RegExp} [options.interpolate=_.templateSettings.interpolate]
      *  The "interpolate" delimiter.
-     * @param {string} [options.sourceURL='lofantasygold.templateSources[n]']
+     * @param {string} [options.sourceURL='lodash.templateSources[n]']
      *  The sourceURL of the compiled template.
      * @param {string} [options.variable='obj']
      *  The data object variable name.
@@ -16645,7 +16645,7 @@ if (typeof Object.create === 'function') {
       // Based on John Resig's `tmpl` implementation
       // (http://ejohn.org/blog/javascript-micro-templating/)
       // and Laura Doktorova's doT.js (https://github.com/olado/doT).
-      var settings = lofantasygold.templateSettings;
+      var settings = lodash.templateSettings;
 
       if (guard && isIterateeCall(string, options, guard)) {
         options = undefined;
@@ -16675,7 +16675,7 @@ if (typeof Object.create === 'function') {
       var sourceURL = '//# sourceURL=' +
         ('sourceURL' in options
           ? options.sourceURL
-          : ('lofantasygold.templateSources[' + (++templateCounter) + ']')
+          : ('lodash.templateSources[' + (++templateCounter) + ']')
         ) + '\n';
 
       string.replace(reDelimiters, function(match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
@@ -17527,14 +17527,14 @@ if (typeof Object.create === 'function') {
      * object to the destination object. If `object` is a function, then methods
      * are added to its prototype as well.
      *
-     * **Note:** Use `_.runInContext` to create a pristine `lofantasygold` function to
+     * **Note:** Use `_.runInContext` to create a pristine `lodash` function to
      * avoid conflicts caused by modifying the original.
      *
      * @static
      * @since 0.1.0
      * @memberOf _
      * @category Util
-     * @param {Function|Object} [object=lofantasygold] The destination object.
+     * @param {Function|Object} [object=lodash] The destination object.
      * @param {Object} source The object of functions to add.
      * @param {Object} [options={}] The options object.
      * @param {boolean} [options.chain=true] Specify whether mixins are chainable.
@@ -17596,16 +17596,16 @@ if (typeof Object.create === 'function') {
 
     /**
      * Reverts the `_` variable to its previous value and returns a reference to
-     * the `lofantasygold` function.
+     * the `lodash` function.
      *
      * @static
      * @since 0.1.0
      * @memberOf _
      * @category Util
-     * @returns {Function} Returns the `lofantasygold` function.
+     * @returns {Function} Returns the `lodash` function.
      * @example
      *
-     * var lofantasygold = _.noConflict();
+     * var lodash = _.noConflict();
      */
     function noConflict() {
       if (root._ === this) {
@@ -18391,327 +18391,327 @@ if (typeof Object.create === 'function') {
     /*------------------------------------------------------------------------*/
 
     // Add methods that return wrapped values in chain sequences.
-    lofantasygold.after = after;
-    lofantasygold.ary = ary;
-    lofantasygold.assign = assign;
-    lofantasygold.assignIn = assignIn;
-    lofantasygold.assignInWith = assignInWith;
-    lofantasygold.assignWith = assignWith;
-    lofantasygold.at = at;
-    lofantasygold.before = before;
-    lofantasygold.bind = bind;
-    lofantasygold.bindAll = bindAll;
-    lofantasygold.bindKey = bindKey;
-    lofantasygold.castArray = castArray;
-    lofantasygold.chain = chain;
-    lofantasygold.chunk = chunk;
-    lofantasygold.compact = compact;
-    lofantasygold.concat = concat;
-    lofantasygold.cond = cond;
-    lofantasygold.conforms = conforms;
-    lofantasygold.constant = constant;
-    lofantasygold.countBy = countBy;
-    lofantasygold.create = create;
-    lofantasygold.curry = curry;
-    lofantasygold.curryRight = curryRight;
-    lofantasygold.debounce = debounce;
-    lofantasygold.defaults = defaults;
-    lofantasygold.defaultsDeep = defaultsDeep;
-    lofantasygold.defer = defer;
-    lofantasygold.delay = delay;
-    lofantasygold.difference = difference;
-    lofantasygold.differenceBy = differenceBy;
-    lofantasygold.differenceWith = differenceWith;
-    lofantasygold.drop = drop;
-    lofantasygold.dropRight = dropRight;
-    lofantasygold.dropRightWhile = dropRightWhile;
-    lofantasygold.dropWhile = dropWhile;
-    lofantasygold.fill = fill;
-    lofantasygold.filter = filter;
-    lofantasygold.flatMap = flatMap;
-    lofantasygold.flatMapDeep = flatMapDeep;
-    lofantasygold.flatMapDepth = flatMapDepth;
-    lofantasygold.flatten = flatten;
-    lofantasygold.flattenDeep = flattenDeep;
-    lofantasygold.flattenDepth = flattenDepth;
-    lofantasygold.flip = flip;
-    lofantasygold.flow = flow;
-    lofantasygold.flowRight = flowRight;
-    lofantasygold.fromPairs = fromPairs;
-    lofantasygold.functions = functions;
-    lofantasygold.functionsIn = functionsIn;
-    lofantasygold.groupBy = groupBy;
-    lofantasygold.initial = initial;
-    lofantasygold.intersection = intersection;
-    lofantasygold.intersectionBy = intersectionBy;
-    lofantasygold.intersectionWith = intersectionWith;
-    lofantasygold.invert = invert;
-    lofantasygold.invertBy = invertBy;
-    lofantasygold.invokeMap = invokeMap;
-    lofantasygold.iteratee = iteratee;
-    lofantasygold.keyBy = keyBy;
-    lofantasygold.keys = keys;
-    lofantasygold.keysIn = keysIn;
-    lofantasygold.map = map;
-    lofantasygold.mapKeys = mapKeys;
-    lofantasygold.mapValues = mapValues;
-    lofantasygold.matches = matches;
-    lofantasygold.matchesProperty = matchesProperty;
-    lofantasygold.memoize = memoize;
-    lofantasygold.merge = merge;
-    lofantasygold.mergeWith = mergeWith;
-    lofantasygold.method = method;
-    lofantasygold.methodOf = methodOf;
-    lofantasygold.mixin = mixin;
-    lofantasygold.negate = negate;
-    lofantasygold.nthArg = nthArg;
-    lofantasygold.omit = omit;
-    lofantasygold.omitBy = omitBy;
-    lofantasygold.once = once;
-    lofantasygold.orderBy = orderBy;
-    lofantasygold.over = over;
-    lofantasygold.overArgs = overArgs;
-    lofantasygold.overEvery = overEvery;
-    lofantasygold.overSome = overSome;
-    lofantasygold.partial = partial;
-    lofantasygold.partialRight = partialRight;
-    lofantasygold.partition = partition;
-    lofantasygold.pick = pick;
-    lofantasygold.pickBy = pickBy;
-    lofantasygold.property = property;
-    lofantasygold.propertyOf = propertyOf;
-    lofantasygold.pull = pull;
-    lofantasygold.pullAll = pullAll;
-    lofantasygold.pullAllBy = pullAllBy;
-    lofantasygold.pullAllWith = pullAllWith;
-    lofantasygold.pullAt = pullAt;
-    lofantasygold.range = range;
-    lofantasygold.rangeRight = rangeRight;
-    lofantasygold.rearg = rearg;
-    lofantasygold.reject = reject;
-    lofantasygold.remove = remove;
-    lofantasygold.rest = rest;
-    lofantasygold.reverse = reverse;
-    lofantasygold.sampleSize = sampleSize;
-    lofantasygold.set = set;
-    lofantasygold.setWith = setWith;
-    lofantasygold.shuffle = shuffle;
-    lofantasygold.slice = slice;
-    lofantasygold.sortBy = sortBy;
-    lofantasygold.sortedUniq = sortedUniq;
-    lofantasygold.sortedUniqBy = sortedUniqBy;
-    lofantasygold.split = split;
-    lofantasygold.spread = spread;
-    lofantasygold.tail = tail;
-    lofantasygold.take = take;
-    lofantasygold.takeRight = takeRight;
-    lofantasygold.takeRightWhile = takeRightWhile;
-    lofantasygold.takeWhile = takeWhile;
-    lofantasygold.tap = tap;
-    lofantasygold.throttle = throttle;
-    lofantasygold.thru = thru;
-    lofantasygold.toArray = toArray;
-    lofantasygold.toPairs = toPairs;
-    lofantasygold.toPairsIn = toPairsIn;
-    lofantasygold.toPath = toPath;
-    lofantasygold.toPlainObject = toPlainObject;
-    lofantasygold.transform = transform;
-    lofantasygold.unary = unary;
-    lofantasygold.union = union;
-    lofantasygold.unionBy = unionBy;
-    lofantasygold.unionWith = unionWith;
-    lofantasygold.uniq = uniq;
-    lofantasygold.uniqBy = uniqBy;
-    lofantasygold.uniqWith = uniqWith;
-    lofantasygold.unset = unset;
-    lofantasygold.unzip = unzip;
-    lofantasygold.unzipWith = unzipWith;
-    lofantasygold.update = update;
-    lofantasygold.updateWith = updateWith;
-    lofantasygold.values = values;
-    lofantasygold.valuesIn = valuesIn;
-    lofantasygold.without = without;
-    lofantasygold.words = words;
-    lofantasygold.wrap = wrap;
-    lofantasygold.xor = xor;
-    lofantasygold.xorBy = xorBy;
-    lofantasygold.xorWith = xorWith;
-    lofantasygold.zip = zip;
-    lofantasygold.zipObject = zipObject;
-    lofantasygold.zipObjectDeep = zipObjectDeep;
-    lofantasygold.zipWith = zipWith;
+    lodash.after = after;
+    lodash.ary = ary;
+    lodash.assign = assign;
+    lodash.assignIn = assignIn;
+    lodash.assignInWith = assignInWith;
+    lodash.assignWith = assignWith;
+    lodash.at = at;
+    lodash.before = before;
+    lodash.bind = bind;
+    lodash.bindAll = bindAll;
+    lodash.bindKey = bindKey;
+    lodash.castArray = castArray;
+    lodash.chain = chain;
+    lodash.chunk = chunk;
+    lodash.compact = compact;
+    lodash.concat = concat;
+    lodash.cond = cond;
+    lodash.conforms = conforms;
+    lodash.constant = constant;
+    lodash.countBy = countBy;
+    lodash.create = create;
+    lodash.curry = curry;
+    lodash.curryRight = curryRight;
+    lodash.debounce = debounce;
+    lodash.defaults = defaults;
+    lodash.defaultsDeep = defaultsDeep;
+    lodash.defer = defer;
+    lodash.delay = delay;
+    lodash.difference = difference;
+    lodash.differenceBy = differenceBy;
+    lodash.differenceWith = differenceWith;
+    lodash.drop = drop;
+    lodash.dropRight = dropRight;
+    lodash.dropRightWhile = dropRightWhile;
+    lodash.dropWhile = dropWhile;
+    lodash.fill = fill;
+    lodash.filter = filter;
+    lodash.flatMap = flatMap;
+    lodash.flatMapDeep = flatMapDeep;
+    lodash.flatMapDepth = flatMapDepth;
+    lodash.flatten = flatten;
+    lodash.flattenDeep = flattenDeep;
+    lodash.flattenDepth = flattenDepth;
+    lodash.flip = flip;
+    lodash.flow = flow;
+    lodash.flowRight = flowRight;
+    lodash.fromPairs = fromPairs;
+    lodash.functions = functions;
+    lodash.functionsIn = functionsIn;
+    lodash.groupBy = groupBy;
+    lodash.initial = initial;
+    lodash.intersection = intersection;
+    lodash.intersectionBy = intersectionBy;
+    lodash.intersectionWith = intersectionWith;
+    lodash.invert = invert;
+    lodash.invertBy = invertBy;
+    lodash.invokeMap = invokeMap;
+    lodash.iteratee = iteratee;
+    lodash.keyBy = keyBy;
+    lodash.keys = keys;
+    lodash.keysIn = keysIn;
+    lodash.map = map;
+    lodash.mapKeys = mapKeys;
+    lodash.mapValues = mapValues;
+    lodash.matches = matches;
+    lodash.matchesProperty = matchesProperty;
+    lodash.memoize = memoize;
+    lodash.merge = merge;
+    lodash.mergeWith = mergeWith;
+    lodash.method = method;
+    lodash.methodOf = methodOf;
+    lodash.mixin = mixin;
+    lodash.negate = negate;
+    lodash.nthArg = nthArg;
+    lodash.omit = omit;
+    lodash.omitBy = omitBy;
+    lodash.once = once;
+    lodash.orderBy = orderBy;
+    lodash.over = over;
+    lodash.overArgs = overArgs;
+    lodash.overEvery = overEvery;
+    lodash.overSome = overSome;
+    lodash.partial = partial;
+    lodash.partialRight = partialRight;
+    lodash.partition = partition;
+    lodash.pick = pick;
+    lodash.pickBy = pickBy;
+    lodash.property = property;
+    lodash.propertyOf = propertyOf;
+    lodash.pull = pull;
+    lodash.pullAll = pullAll;
+    lodash.pullAllBy = pullAllBy;
+    lodash.pullAllWith = pullAllWith;
+    lodash.pullAt = pullAt;
+    lodash.range = range;
+    lodash.rangeRight = rangeRight;
+    lodash.rearg = rearg;
+    lodash.reject = reject;
+    lodash.remove = remove;
+    lodash.rest = rest;
+    lodash.reverse = reverse;
+    lodash.sampleSize = sampleSize;
+    lodash.set = set;
+    lodash.setWith = setWith;
+    lodash.shuffle = shuffle;
+    lodash.slice = slice;
+    lodash.sortBy = sortBy;
+    lodash.sortedUniq = sortedUniq;
+    lodash.sortedUniqBy = sortedUniqBy;
+    lodash.split = split;
+    lodash.spread = spread;
+    lodash.tail = tail;
+    lodash.take = take;
+    lodash.takeRight = takeRight;
+    lodash.takeRightWhile = takeRightWhile;
+    lodash.takeWhile = takeWhile;
+    lodash.tap = tap;
+    lodash.throttle = throttle;
+    lodash.thru = thru;
+    lodash.toArray = toArray;
+    lodash.toPairs = toPairs;
+    lodash.toPairsIn = toPairsIn;
+    lodash.toPath = toPath;
+    lodash.toPlainObject = toPlainObject;
+    lodash.transform = transform;
+    lodash.unary = unary;
+    lodash.union = union;
+    lodash.unionBy = unionBy;
+    lodash.unionWith = unionWith;
+    lodash.uniq = uniq;
+    lodash.uniqBy = uniqBy;
+    lodash.uniqWith = uniqWith;
+    lodash.unset = unset;
+    lodash.unzip = unzip;
+    lodash.unzipWith = unzipWith;
+    lodash.update = update;
+    lodash.updateWith = updateWith;
+    lodash.values = values;
+    lodash.valuesIn = valuesIn;
+    lodash.without = without;
+    lodash.words = words;
+    lodash.wrap = wrap;
+    lodash.xor = xor;
+    lodash.xorBy = xorBy;
+    lodash.xorWith = xorWith;
+    lodash.zip = zip;
+    lodash.zipObject = zipObject;
+    lodash.zipObjectDeep = zipObjectDeep;
+    lodash.zipWith = zipWith;
 
     // Add aliases.
-    lofantasygold.entries = toPairs;
-    lofantasygold.entriesIn = toPairsIn;
-    lofantasygold.extend = assignIn;
-    lofantasygold.extendWith = assignInWith;
+    lodash.entries = toPairs;
+    lodash.entriesIn = toPairsIn;
+    lodash.extend = assignIn;
+    lodash.extendWith = assignInWith;
 
-    // Add methods to `lofantasygold.prototype`.
-    mixin(lofantasygold, lofantasygold);
+    // Add methods to `lodash.prototype`.
+    mixin(lodash, lodash);
 
     /*------------------------------------------------------------------------*/
 
     // Add methods that return unwrapped values in chain sequences.
-    lofantasygold.add = add;
-    lofantasygold.attempt = attempt;
-    lofantasygold.camelCase = camelCase;
-    lofantasygold.capitalize = capitalize;
-    lofantasygold.ceil = ceil;
-    lofantasygold.clamp = clamp;
-    lofantasygold.clone = clone;
-    lofantasygold.cloneDeep = cloneDeep;
-    lofantasygold.cloneDeepWith = cloneDeepWith;
-    lofantasygold.cloneWith = cloneWith;
-    lofantasygold.conformsTo = conformsTo;
-    lofantasygold.deburr = deburr;
-    lofantasygold.defaultTo = defaultTo;
-    lofantasygold.divide = divide;
-    lofantasygold.endsWith = endsWith;
-    lofantasygold.eq = eq;
-    lofantasygold.escape = escape;
-    lofantasygold.escapeRegExp = escapeRegExp;
-    lofantasygold.every = every;
-    lofantasygold.find = find;
-    lofantasygold.findIndex = findIndex;
-    lofantasygold.findKey = findKey;
-    lofantasygold.findLast = findLast;
-    lofantasygold.findLastIndex = findLastIndex;
-    lofantasygold.findLastKey = findLastKey;
-    lofantasygold.floor = floor;
-    lofantasygold.forEach = forEach;
-    lofantasygold.forEachRight = forEachRight;
-    lofantasygold.forIn = forIn;
-    lofantasygold.forInRight = forInRight;
-    lofantasygold.forOwn = forOwn;
-    lofantasygold.forOwnRight = forOwnRight;
-    lofantasygold.get = get;
-    lofantasygold.gt = gt;
-    lofantasygold.gte = gte;
-    lofantasygold.has = has;
-    lofantasygold.hasIn = hasIn;
-    lofantasygold.head = head;
-    lofantasygold.identity = identity;
-    lofantasygold.includes = includes;
-    lofantasygold.indexOf = indexOf;
-    lofantasygold.inRange = inRange;
-    lofantasygold.invoke = invoke;
-    lofantasygold.isArguments = isArguments;
-    lofantasygold.isArray = isArray;
-    lofantasygold.isArrayBuffer = isArrayBuffer;
-    lofantasygold.isArrayLike = isArrayLike;
-    lofantasygold.isArrayLikeObject = isArrayLikeObject;
-    lofantasygold.isBoolean = isBoolean;
-    lofantasygold.isBuffer = isBuffer;
-    lofantasygold.isDate = isDate;
-    lofantasygold.isElement = isElement;
-    lofantasygold.isEmpty = isEmpty;
-    lofantasygold.isEqual = isEqual;
-    lofantasygold.isEqualWith = isEqualWith;
-    lofantasygold.isError = isError;
-    lofantasygold.isFinite = isFinite;
-    lofantasygold.isFunction = isFunction;
-    lofantasygold.isInteger = isInteger;
-    lofantasygold.isLength = isLength;
-    lofantasygold.isMap = isMap;
-    lofantasygold.isMatch = isMatch;
-    lofantasygold.isMatchWith = isMatchWith;
-    lofantasygold.isNaN = isNaN;
-    lofantasygold.isNative = isNative;
-    lofantasygold.isNil = isNil;
-    lofantasygold.isNull = isNull;
-    lofantasygold.isNumber = isNumber;
-    lofantasygold.isObject = isObject;
-    lofantasygold.isObjectLike = isObjectLike;
-    lofantasygold.isPlainObject = isPlainObject;
-    lofantasygold.isRegExp = isRegExp;
-    lofantasygold.isSafeInteger = isSafeInteger;
-    lofantasygold.isSet = isSet;
-    lofantasygold.isString = isString;
-    lofantasygold.isSymbol = isSymbol;
-    lofantasygold.isTypedArray = isTypedArray;
-    lofantasygold.isUndefined = isUndefined;
-    lofantasygold.isWeakMap = isWeakMap;
-    lofantasygold.isWeakSet = isWeakSet;
-    lofantasygold.join = join;
-    lofantasygold.kebabCase = kebabCase;
-    lofantasygold.last = last;
-    lofantasygold.lastIndexOf = lastIndexOf;
-    lofantasygold.lowerCase = lowerCase;
-    lofantasygold.lowerFirst = lowerFirst;
-    lofantasygold.lt = lt;
-    lofantasygold.lte = lte;
-    lofantasygold.max = max;
-    lofantasygold.maxBy = maxBy;
-    lofantasygold.mean = mean;
-    lofantasygold.meanBy = meanBy;
-    lofantasygold.min = min;
-    lofantasygold.minBy = minBy;
-    lofantasygold.stubArray = stubArray;
-    lofantasygold.stubFalse = stubFalse;
-    lofantasygold.stubObject = stubObject;
-    lofantasygold.stubString = stubString;
-    lofantasygold.stubTrue = stubTrue;
-    lofantasygold.multiply = multiply;
-    lofantasygold.nth = nth;
-    lofantasygold.noConflict = noConflict;
-    lofantasygold.noop = noop;
-    lofantasygold.now = now;
-    lofantasygold.pad = pad;
-    lofantasygold.padEnd = padEnd;
-    lofantasygold.padStart = padStart;
-    lofantasygold.parseInt = parseInt;
-    lofantasygold.random = random;
-    lofantasygold.reduce = reduce;
-    lofantasygold.reduceRight = reduceRight;
-    lofantasygold.repeat = repeat;
-    lofantasygold.replace = replace;
-    lofantasygold.result = result;
-    lofantasygold.round = round;
-    lofantasygold.runInContext = runInContext;
-    lofantasygold.sample = sample;
-    lofantasygold.size = size;
-    lofantasygold.snakeCase = snakeCase;
-    lofantasygold.some = some;
-    lofantasygold.sortedIndex = sortedIndex;
-    lofantasygold.sortedIndexBy = sortedIndexBy;
-    lofantasygold.sortedIndexOf = sortedIndexOf;
-    lofantasygold.sortedLastIndex = sortedLastIndex;
-    lofantasygold.sortedLastIndexBy = sortedLastIndexBy;
-    lofantasygold.sortedLastIndexOf = sortedLastIndexOf;
-    lofantasygold.startCase = startCase;
-    lofantasygold.startsWith = startsWith;
-    lofantasygold.subtract = subtract;
-    lofantasygold.sum = sum;
-    lofantasygold.sumBy = sumBy;
-    lofantasygold.template = template;
-    lofantasygold.times = times;
-    lofantasygold.toFinite = toFinite;
-    lofantasygold.toInteger = toInteger;
-    lofantasygold.toLength = toLength;
-    lofantasygold.toLower = toLower;
-    lofantasygold.toNumber = toNumber;
-    lofantasygold.toSafeInteger = toSafeInteger;
-    lofantasygold.toString = toString;
-    lofantasygold.toUpper = toUpper;
-    lofantasygold.trim = trim;
-    lofantasygold.trimEnd = trimEnd;
-    lofantasygold.trimStart = trimStart;
-    lofantasygold.truncate = truncate;
-    lofantasygold.unescape = unescape;
-    lofantasygold.uniqueId = uniqueId;
-    lofantasygold.upperCase = upperCase;
-    lofantasygold.upperFirst = upperFirst;
+    lodash.add = add;
+    lodash.attempt = attempt;
+    lodash.camelCase = camelCase;
+    lodash.capitalize = capitalize;
+    lodash.ceil = ceil;
+    lodash.clamp = clamp;
+    lodash.clone = clone;
+    lodash.cloneDeep = cloneDeep;
+    lodash.cloneDeepWith = cloneDeepWith;
+    lodash.cloneWith = cloneWith;
+    lodash.conformsTo = conformsTo;
+    lodash.deburr = deburr;
+    lodash.defaultTo = defaultTo;
+    lodash.divide = divide;
+    lodash.endsWith = endsWith;
+    lodash.eq = eq;
+    lodash.escape = escape;
+    lodash.escapeRegExp = escapeRegExp;
+    lodash.every = every;
+    lodash.find = find;
+    lodash.findIndex = findIndex;
+    lodash.findKey = findKey;
+    lodash.findLast = findLast;
+    lodash.findLastIndex = findLastIndex;
+    lodash.findLastKey = findLastKey;
+    lodash.floor = floor;
+    lodash.forEach = forEach;
+    lodash.forEachRight = forEachRight;
+    lodash.forIn = forIn;
+    lodash.forInRight = forInRight;
+    lodash.forOwn = forOwn;
+    lodash.forOwnRight = forOwnRight;
+    lodash.get = get;
+    lodash.gt = gt;
+    lodash.gte = gte;
+    lodash.has = has;
+    lodash.hasIn = hasIn;
+    lodash.head = head;
+    lodash.identity = identity;
+    lodash.includes = includes;
+    lodash.indexOf = indexOf;
+    lodash.inRange = inRange;
+    lodash.invoke = invoke;
+    lodash.isArguments = isArguments;
+    lodash.isArray = isArray;
+    lodash.isArrayBuffer = isArrayBuffer;
+    lodash.isArrayLike = isArrayLike;
+    lodash.isArrayLikeObject = isArrayLikeObject;
+    lodash.isBoolean = isBoolean;
+    lodash.isBuffer = isBuffer;
+    lodash.isDate = isDate;
+    lodash.isElement = isElement;
+    lodash.isEmpty = isEmpty;
+    lodash.isEqual = isEqual;
+    lodash.isEqualWith = isEqualWith;
+    lodash.isError = isError;
+    lodash.isFinite = isFinite;
+    lodash.isFunction = isFunction;
+    lodash.isInteger = isInteger;
+    lodash.isLength = isLength;
+    lodash.isMap = isMap;
+    lodash.isMatch = isMatch;
+    lodash.isMatchWith = isMatchWith;
+    lodash.isNaN = isNaN;
+    lodash.isNative = isNative;
+    lodash.isNil = isNil;
+    lodash.isNull = isNull;
+    lodash.isNumber = isNumber;
+    lodash.isObject = isObject;
+    lodash.isObjectLike = isObjectLike;
+    lodash.isPlainObject = isPlainObject;
+    lodash.isRegExp = isRegExp;
+    lodash.isSafeInteger = isSafeInteger;
+    lodash.isSet = isSet;
+    lodash.isString = isString;
+    lodash.isSymbol = isSymbol;
+    lodash.isTypedArray = isTypedArray;
+    lodash.isUndefined = isUndefined;
+    lodash.isWeakMap = isWeakMap;
+    lodash.isWeakSet = isWeakSet;
+    lodash.join = join;
+    lodash.kebabCase = kebabCase;
+    lodash.last = last;
+    lodash.lastIndexOf = lastIndexOf;
+    lodash.lowerCase = lowerCase;
+    lodash.lowerFirst = lowerFirst;
+    lodash.lt = lt;
+    lodash.lte = lte;
+    lodash.max = max;
+    lodash.maxBy = maxBy;
+    lodash.mean = mean;
+    lodash.meanBy = meanBy;
+    lodash.min = min;
+    lodash.minBy = minBy;
+    lodash.stubArray = stubArray;
+    lodash.stubFalse = stubFalse;
+    lodash.stubObject = stubObject;
+    lodash.stubString = stubString;
+    lodash.stubTrue = stubTrue;
+    lodash.multiply = multiply;
+    lodash.nth = nth;
+    lodash.noConflict = noConflict;
+    lodash.noop = noop;
+    lodash.now = now;
+    lodash.pad = pad;
+    lodash.padEnd = padEnd;
+    lodash.padStart = padStart;
+    lodash.parseInt = parseInt;
+    lodash.random = random;
+    lodash.reduce = reduce;
+    lodash.reduceRight = reduceRight;
+    lodash.repeat = repeat;
+    lodash.replace = replace;
+    lodash.result = result;
+    lodash.round = round;
+    lodash.runInContext = runInContext;
+    lodash.sample = sample;
+    lodash.size = size;
+    lodash.snakeCase = snakeCase;
+    lodash.some = some;
+    lodash.sortedIndex = sortedIndex;
+    lodash.sortedIndexBy = sortedIndexBy;
+    lodash.sortedIndexOf = sortedIndexOf;
+    lodash.sortedLastIndex = sortedLastIndex;
+    lodash.sortedLastIndexBy = sortedLastIndexBy;
+    lodash.sortedLastIndexOf = sortedLastIndexOf;
+    lodash.startCase = startCase;
+    lodash.startsWith = startsWith;
+    lodash.subtract = subtract;
+    lodash.sum = sum;
+    lodash.sumBy = sumBy;
+    lodash.template = template;
+    lodash.times = times;
+    lodash.toFinite = toFinite;
+    lodash.toInteger = toInteger;
+    lodash.toLength = toLength;
+    lodash.toLower = toLower;
+    lodash.toNumber = toNumber;
+    lodash.toSafeInteger = toSafeInteger;
+    lodash.toString = toString;
+    lodash.toUpper = toUpper;
+    lodash.trim = trim;
+    lodash.trimEnd = trimEnd;
+    lodash.trimStart = trimStart;
+    lodash.truncate = truncate;
+    lodash.unescape = unescape;
+    lodash.uniqueId = uniqueId;
+    lodash.upperCase = upperCase;
+    lodash.upperFirst = upperFirst;
 
     // Add aliases.
-    lofantasygold.each = forEach;
-    lofantasygold.eachRight = forEachRight;
-    lofantasygold.first = head;
+    lodash.each = forEach;
+    lodash.eachRight = forEachRight;
+    lodash.first = head;
 
-    mixin(lofantasygold, (function() {
+    mixin(lodash, (function() {
       var source = {};
-      baseForOwn(lofantasygold, function(func, methodName) {
-        if (!hasOwnProperty.call(lofantasygold.prototype, methodName)) {
+      baseForOwn(lodash, function(func, methodName) {
+        if (!hasOwnProperty.call(lodash.prototype, methodName)) {
           source[methodName] = func;
         }
       });
@@ -18727,11 +18727,11 @@ if (typeof Object.create === 'function') {
      * @memberOf _
      * @type {string}
      */
-    lofantasygold.VERSION = VERSION;
+    lodash.VERSION = VERSION;
 
     // Assign default placeholders.
     arrayEach(['bind', 'bindKey', 'curry', 'curryRight', 'partial', 'partialRight'], function(methodName) {
-      lofantasygold[methodName].placeholder = lofantasygold;
+      lodash[methodName].placeholder = lodash;
     });
 
     // Add `LazyWrapper` methods for `_.drop` and `_.take` variants.
@@ -18846,17 +18846,17 @@ if (typeof Object.create === 'function') {
       return this.take(MAX_ARRAY_LENGTH);
     };
 
-    // Add `LazyWrapper` methods to `lofantasygold.prototype`.
+    // Add `LazyWrapper` methods to `lodash.prototype`.
     baseForOwn(LazyWrapper.prototype, function(func, methodName) {
       var checkIteratee = /^(?:filter|find|map|reject)|While$/.test(methodName),
           isTaker = /^(?:head|last)$/.test(methodName),
-          lofantasygoldFunc = lofantasygold[isTaker ? ('take' + (methodName == 'last' ? 'Right' : '')) : methodName],
+          lodashFunc = lodash[isTaker ? ('take' + (methodName == 'last' ? 'Right' : '')) : methodName],
           retUnwrapped = isTaker || /^find/.test(methodName);
 
-      if (!lofantasygoldFunc) {
+      if (!lodashFunc) {
         return;
       }
-      lofantasygold.prototype[methodName] = function() {
+      lodash.prototype[methodName] = function() {
         var value = this.__wrapped__,
             args = isTaker ? [1] : arguments,
             isLazy = value instanceof LazyWrapper,
@@ -18864,7 +18864,7 @@ if (typeof Object.create === 'function') {
             useLazy = isLazy || isArray(value);
 
         var interceptor = function(value) {
-          var result = lofantasygoldFunc.apply(lofantasygold, arrayPush([value], args));
+          var result = lodashFunc.apply(lodash, arrayPush([value], args));
           return (isTaker && chainAll) ? result[0] : result;
         };
 
@@ -18881,7 +18881,7 @@ if (typeof Object.create === 'function') {
           value = onlyLazy ? value : new LazyWrapper(this);
           var result = func.apply(value, args);
           result.__actions__.push({ 'func': thru, 'args': [interceptor], 'thisArg': undefined });
-          return new LofantasygoldWrapper(result, chainAll);
+          return new lodashWrapper(result, chainAll);
         }
         if (isUnwrapped && onlyLazy) {
           return func.apply(this, args);
@@ -18891,13 +18891,13 @@ if (typeof Object.create === 'function') {
       };
     });
 
-    // Add `Array` methods to `lofantasygold.prototype`.
+    // Add `Array` methods to `lodash.prototype`.
     arrayEach(['pop', 'push', 'shift', 'sort', 'splice', 'unshift'], function(methodName) {
       var func = arrayProto[methodName],
           chainName = /^(?:push|sort|unshift)$/.test(methodName) ? 'tap' : 'thru',
           retUnwrapped = /^(?:pop|shift)$/.test(methodName);
 
-      lofantasygold.prototype[methodName] = function() {
+      lodash.prototype[methodName] = function() {
         var args = arguments;
         if (retUnwrapped && !this.__chain__) {
           var value = this.value();
@@ -18911,12 +18911,12 @@ if (typeof Object.create === 'function') {
 
     // Map minified method names to their real names.
     baseForOwn(LazyWrapper.prototype, function(func, methodName) {
-      var lofantasygoldFunc = lofantasygold[methodName];
-      if (lofantasygoldFunc) {
-        var key = (lofantasygoldFunc.name + ''),
+      var lodashFunc = lodash[methodName];
+      if (lodashFunc) {
+        var key = (lodashFunc.name + ''),
             names = realNames[key] || (realNames[key] = []);
 
-        names.push({ 'name': methodName, 'func': lofantasygoldFunc });
+        names.push({ 'name': methodName, 'func': lodashFunc });
       }
     });
 
@@ -18930,35 +18930,35 @@ if (typeof Object.create === 'function') {
     LazyWrapper.prototype.reverse = lazyReverse;
     LazyWrapper.prototype.value = lazyValue;
 
-    // Add chain sequence methods to the `lofantasygold` wrapper.
-    lofantasygold.prototype.at = wrapperAt;
-    lofantasygold.prototype.chain = wrapperChain;
-    lofantasygold.prototype.commit = wrapperCommit;
-    lofantasygold.prototype.next = wrapperNext;
-    lofantasygold.prototype.plant = wrapperPlant;
-    lofantasygold.prototype.reverse = wrapperReverse;
-    lofantasygold.prototype.toJSON = lofantasygold.prototype.valueOf = lofantasygold.prototype.value = wrapperValue;
+    // Add chain sequence methods to the `lodash` wrapper.
+    lodash.prototype.at = wrapperAt;
+    lodash.prototype.chain = wrapperChain;
+    lodash.prototype.commit = wrapperCommit;
+    lodash.prototype.next = wrapperNext;
+    lodash.prototype.plant = wrapperPlant;
+    lodash.prototype.reverse = wrapperReverse;
+    lodash.prototype.toJSON = lodash.prototype.valueOf = lodash.prototype.value = wrapperValue;
 
     // Add lazy aliases.
-    lofantasygold.prototype.first = lofantasygold.prototype.head;
+    lodash.prototype.first = lodash.prototype.head;
 
     if (symIterator) {
-      lofantasygold.prototype[symIterator] = wrapperToIterator;
+      lodash.prototype[symIterator] = wrapperToIterator;
     }
-    return lofantasygold;
+    return lodash;
   });
 
   /*--------------------------------------------------------------------------*/
 
-  // Export lofantasygold.
+  // Export lodash.
   var _ = runInContext();
 
   // Some AMD build optimizers, like r.js, check for condition patterns like:
   if (true) {
-    // Expose Lofantasygold on the global object to prevent errors when Lofantasygold is
+    // Expose lodash on the global object to prevent errors when lodash is
     // loaded by a script tag in the presence of an AMD loader.
     // See http://requirejs.org/docs/errors.html#mismatch for more details.
-    // Use `_.noConflict` to remove Lofantasygold from the global object.
+    // Use `_.noConflict` to remove lodash from the global object.
     root._ = _;
 
     // Define as an anonymous module so, through path mapping, it can be
@@ -42647,7 +42647,7 @@ Transaction.prototype.sort = function() {
 
 /**
  * Randomize this transaction's outputs ordering. The shuffling algorithm is a
- * version of the Fisher-Yates shuffle, provided by lofantasygold's _.shuffle().
+ * version of the Fisher-Yates shuffle, provided by lodash's _.shuffle().
  *
  * @return {Transaction} this
  */
@@ -54986,7 +54986,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 /* 131 */
 /***/ (function(module, exports) {
 
-module.exports = {"name":"@fantasygoldevo/fantasygoldcore-lib","version":"0.15.4","description":"A pure and powerful JavaScript FantasyGold library.","author":"BitPay <dev@bitpay.com>","main":"index.js","scripts":{"lint":"jshint . || true","test":"npm run build && npm run test:node && npm run test:browser && npm run lint","test:node":"mocha --no-timeouts --recursive","test:browser":"karma start ./karma.conf.js --single-run","coverage":"nyc mocha --recursive","build":"webpack --display-error-details"},"contributors":[{"name":"Daniel Cousens","email":"bitcoin@dcousens.com"},{"name":"Esteban Ordano","email":"eordano@gmail.com"},{"name":"Gordon Hall","email":"gordon@bitpay.com"},{"name":"Jeff Garzik","email":"jgarzik@bitpay.com"},{"name":"Kyle Drake","email":"kyle@kyledrake.net"},{"name":"Manuel Araoz","email":"manuelaraoz@gmail.com"},{"name":"Matias Alejo Garcia","email":"ematiu@gmail.com"},{"name":"Ryan X. Charles","email":"ryanxcharles@gmail.com"},{"name":"Stefan Thomas","email":"moon@justmoon.net"},{"name":"Stephen Pair","email":"stephen@bitpay.com"},{"name":"Wei Lu","email":"luwei.here@gmail.com"},{"name":"UdjinM6","email":"UdjinM6@gmail.com"},{"name":"Jon Kindel","email":"jon@fantasygold.org"},{"name":"Alex Werner","email":"alex@werner.fr"}],"keywords":["fantasygold","transaction","address","p2p","ecies","cryptocurrency","blockchain","payment","bip21","bip32","bip37","bip69","bip70","multisig","fantasygoldcore"],"repository":{"type":"git","url":"https://github.com/fantasygoldevo/fantasygoldcore-lib.git"},"bugs":{"url":"https://github.com/fantasygoldevo/fantasygoldcore-lib/issues"},"homepage":"https://github.com/fantasygoldevo/fantasygoldcore-lib","browser":{"request":"browser-request"},"dependencies":{"bn.js":"=2.0.4","bs58":"=2.0.0","buffer-compare":"=1.0.0","elliptic":"=3.0.3","inherits":"=2.0.1","lofantasygold":"=4.17.1","sha512":"=0.0.1","x11-hash-js":"^1.0.0"},"devDependencies":{"brfs":"^1.2.0","chai":"^1.10.0","gulp":"^3.8.10","jshint":"^2.9.5","karma":"^2.0.0","karma-chai":"^0.1.0","karma-chrome-launcher":"^2.2.0","karma-detect-browsers":"^2.2.6","karma-firefox-launcher":"^1.1.0","karma-mocha":"^1.3.0","karma-mocha-reporter":"^2.2.5","karma-webpack":"^3.0.0","mocha":"^5.0.4","nyc":"^11.6.0","raw-loader":"^0.5.1","sinon":"^4.2.2","transform-loader":"^0.2.4","uglifyjs-webpack-plugin":"^1.2.4","webpack":"^3.10.0"},"license":"MIT"}
+module.exports = {"name":"@fantasygoldevo/fantasygoldcore-lib","version":"0.15.4","description":"A pure and powerful JavaScript FantasyGold library.","author":"BitPay <dev@bitpay.com>","main":"index.js","scripts":{"lint":"jshint . || true","test":"npm run build && npm run test:node && npm run test:browser && npm run lint","test:node":"mocha --no-timeouts --recursive","test:browser":"karma start ./karma.conf.js --single-run","coverage":"nyc mocha --recursive","build":"webpack --display-error-details"},"contributors":[{"name":"Daniel Cousens","email":"bitcoin@dcousens.com"},{"name":"Esteban Ordano","email":"eordano@gmail.com"},{"name":"Gordon Hall","email":"gordon@bitpay.com"},{"name":"Jeff Garzik","email":"jgarzik@bitpay.com"},{"name":"Kyle Drake","email":"kyle@kyledrake.net"},{"name":"Manuel Araoz","email":"manuelaraoz@gmail.com"},{"name":"Matias Alejo Garcia","email":"ematiu@gmail.com"},{"name":"Ryan X. Charles","email":"ryanxcharles@gmail.com"},{"name":"Stefan Thomas","email":"moon@justmoon.net"},{"name":"Stephen Pair","email":"stephen@bitpay.com"},{"name":"Wei Lu","email":"luwei.here@gmail.com"},{"name":"UdjinM6","email":"UdjinM6@gmail.com"},{"name":"Jon Kindel","email":"jon@fantasygold.org"},{"name":"Alex Werner","email":"alex@werner.fr"}],"keywords":["fantasygold","transaction","address","p2p","ecies","cryptocurrency","blockchain","payment","bip21","bip32","bip37","bip69","bip70","multisig","fantasygoldcore"],"repository":{"type":"git","url":"https://github.com/fantasygoldevo/fantasygoldcore-lib.git"},"bugs":{"url":"https://github.com/fantasygoldevo/fantasygoldcore-lib/issues"},"homepage":"https://github.com/fantasygoldevo/fantasygoldcore-lib","browser":{"request":"browser-request"},"dependencies":{"bn.js":"=2.0.4","bs58":"=2.0.0","buffer-compare":"=1.0.0","elliptic":"=3.0.3","inherits":"=2.0.1","lodash":"=4.17.1","sha512":"=0.0.1","x11-hash-js":"^1.0.0"},"devDependencies":{"brfs":"^1.2.0","chai":"^1.10.0","gulp":"^3.8.10","jshint":"^2.9.5","karma":"^2.0.0","karma-chai":"^0.1.0","karma-chrome-launcher":"^2.2.0","karma-detect-browsers":"^2.2.6","karma-firefox-launcher":"^1.1.0","karma-mocha":"^1.3.0","karma-mocha-reporter":"^2.2.5","karma-webpack":"^3.0.0","mocha":"^5.0.4","nyc":"^11.6.0","raw-loader":"^0.5.1","sinon":"^4.2.2","transform-loader":"^0.2.4","uglifyjs-webpack-plugin":"^1.2.4","webpack":"^3.10.0"},"license":"MIT"}
 
 /***/ }),
 /* 132 */
